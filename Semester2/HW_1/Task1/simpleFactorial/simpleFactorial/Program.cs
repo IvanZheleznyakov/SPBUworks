@@ -9,7 +9,7 @@ namespace simpleFactorial
     public class Program
     {
         // Count factorial.
-        public static int Factorial(int number)
+        public static int factorial(int number)
         {
             int result = 1;
             for (int i = 1; i != number + 1; ++i)
@@ -23,7 +23,7 @@ namespace simpleFactorial
         {
             Console.WriteLine("Enter natural number: ");
             int number = int.Parse(Console.ReadLine());
-            Console.WriteLine("Factorial is " + Factorial(number));
+            Console.WriteLine("Factorial is " + factorial(number));
         }
     }
 }
