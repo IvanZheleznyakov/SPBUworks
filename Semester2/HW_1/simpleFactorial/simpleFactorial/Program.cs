@@ -8,6 +8,7 @@ namespace simpleFactorial
 {
     class Program
     {
+        // Count factorial.
         static int Factorial(int number)
         {
             int result = 1;
@@ -17,6 +18,7 @@ namespace simpleFactorial
             }
             return result;
         }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Enter natural number: ");
