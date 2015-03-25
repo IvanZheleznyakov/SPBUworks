@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "simpleFactorial", "simpleFactorial\simpleFactorial.csproj", "{95C2DA19-BB80-467A-9A97-3F9C4E339845}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "simpleFactorial.Tests", "simpleFactorial.Tests\simpleFactorial.Tests.csproj", "{E78C73FB-ADAF-4EF5-BBA5-1B3C8BCAFCBC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,16 @@ Global
 		{95C2DA19-BB80-467A-9A97-3F9C4E339845}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{95C2DA19-BB80-467A-9A97-3F9C4E339845}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{95C2DA19-BB80-467A-9A97-3F9C4E339845}.Release|Win32.ActiveCfg = Release|Any CPU
+		{E78C73FB-ADAF-4EF5-BBA5-1B3C8BCAFCBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E78C73FB-ADAF-4EF5-BBA5-1B3C8BCAFCBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E78C73FB-ADAF-4EF5-BBA5-1B3C8BCAFCBC}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{E78C73FB-ADAF-4EF5-BBA5-1B3C8BCAFCBC}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{E78C73FB-ADAF-4EF5-BBA5-1B3C8BCAFCBC}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{E78C73FB-ADAF-4EF5-BBA5-1B3C8BCAFCBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E78C73FB-ADAF-4EF5-BBA5-1B3C8BCAFCBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E78C73FB-ADAF-4EF5-BBA5-1B3C8BCAFCBC}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{E78C73FB-ADAF-4EF5-BBA5-1B3C8BCAFCBC}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{E78C73FB-ADAF-4EF5-BBA5-1B3C8BCAFCBC}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

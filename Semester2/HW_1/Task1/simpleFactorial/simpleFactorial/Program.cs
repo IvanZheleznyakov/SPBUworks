@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace simpleFactorial
 {
-    class Program
+    public class Program
     {
         // Count factorial.
-        static int Factorial(int number)
+        public static int Factorial(int number)
         {
             int result = 1;
             for (int i = 1; i != number + 1; ++i)
