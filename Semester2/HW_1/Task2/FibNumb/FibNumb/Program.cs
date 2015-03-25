@@ -9,7 +9,7 @@ namespace FibNumb
     public class Program
     {
         // Count number of Fibonacci numbers.
-        static int fibNumb(int number)
+        public static int fibNumb(int number)
         {
             if (number < 3)
             {
