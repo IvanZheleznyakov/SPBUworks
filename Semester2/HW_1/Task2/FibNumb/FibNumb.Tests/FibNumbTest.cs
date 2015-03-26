@@ -9,10 +9,10 @@ namespace FibNumb.Tests
         [TestMethod]
         public void TestMethod1()
         {
-            Assert.AreEqual(1, FibNumb.Program.fibNumb(1));
-            Assert.AreEqual(1, FibNumb.Program.fibNumb(2));
-            Assert.AreEqual(55, FibNumb.Program.fibNumb(10));
-            Assert.AreEqual(6765, FibNumb.Program.fibNumb(20));
+            Assert.AreEqual(1, FibNumb.Program.FibNumb(1));
+            Assert.AreEqual(1, FibNumb.Program.FibNumb(2));
+            Assert.AreEqual(55, FibNumb.Program.FibNumb(10));
+            Assert.AreEqual(6765, FibNumb.Program.FibNumb(20));
         }
     }
 }

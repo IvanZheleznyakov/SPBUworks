@@ -8,8 +8,12 @@ namespace FibNumb
 {
     public class Program
     {
-        // Count number of Fibonacci numbers.
-        public static int fibNumb(int number)
+        /// <summary>
+        /// Count number of Fibonacci numbers.
+        /// </summary>
+        /// <param name="number">Number of Fibonacci numbers.</param>
+        /// <returns>Fibonacci number.</returns>
+        public static int FibNumb(int number)
         {
             if (number < 3)
             {
@@ -34,7 +38,12 @@ namespace FibNumb
         {
             Console.Write("Enter natural number: ");
             int number = int.Parse(Console.ReadLine());
-            Console.WriteLine("Fibonacci number is " + fibNumb(number));
+            if (number > 0)
+            {
+                Console.WriteLine("Fibonacci number is " + FibNumb(number));
+                return;
+            }
+            Console.WriteLine("You entered not natural number.");
         }
     }
 }
