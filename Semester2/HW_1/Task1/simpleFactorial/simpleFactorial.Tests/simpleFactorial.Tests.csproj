@@ -50,13 +50,13 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="simpleFactorialTest.cs" />
+    <Compile Include="SimpleFactorialTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\simpleFactorial\simpleFactorial.csproj">
+    <ProjectReference Include="..\simpleFactorial\SimpleFactorial.csproj">
       <Project>{95c2da19-bb80-467a-9a97-3f9c4e339845}</Project>
-      <Name>simpleFactorial</Name>
+      <Name>SimpleFactorial</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

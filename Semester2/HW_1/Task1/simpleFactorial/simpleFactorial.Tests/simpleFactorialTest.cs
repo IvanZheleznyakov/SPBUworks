@@ -1,17 +1,17 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using simpleFactorial;
+using SimpleFactorial;
 
-namespace simpleFactorial.Tests
+namespace SimpleFactorial.Tests
 {
     [TestClass]
-    public class simpleFactorialTest
+    public class SimpleFactorialTest
     {
         [TestMethod]
         public void factorialTest()
         {
-            Assert.AreEqual(1, simpleFactorial.Program.factorial(1));
-            Assert.AreEqual(24, simpleFactorial.Program.factorial(4));
+            Assert.AreEqual(1, SimpleFactorial.Program.Factorial(1));
+            Assert.AreEqual(24, SimpleFactorial.Program.Factorial(4));
         }
     }
 }

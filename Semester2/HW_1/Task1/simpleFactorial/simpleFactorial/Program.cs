@@ -4,12 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace simpleFactorial
+namespace SimpleFactorial
 {
     public class Program
     {
-        // Count factorial.
-        public static int factorial(int number)
+        /// <summary>
+        /// Count factorial.
+        /// </summary>
+        /// <param name="number">Factorial of this number count.</param>
+        /// <returns>Factorial of number.</returns>
+        public static int Factorial(int number)
         {
             int result = 1;
             for (int i = 1; i != number + 1; ++i)
@@ -23,7 +27,12 @@ namespace simpleFactorial
         {
             Console.WriteLine("Enter natural number: ");
             int number = int.Parse(Console.ReadLine());
-            Console.WriteLine("Factorial is " + factorial(number));
+            if (number > 0)
+            {
+                Console.WriteLine("Factorial is " + Factorial(number));
+                return;
+            }
+            Console.WriteLine("You entered not natural number.");
         }
     }
 }

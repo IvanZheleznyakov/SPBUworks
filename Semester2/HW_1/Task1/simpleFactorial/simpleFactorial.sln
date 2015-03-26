@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "simpleFactorial", "simpleFactorial\simpleFactorial.csproj", "{95C2DA19-BB80-467A-9A97-3F9C4E339845}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleFactorial", "simpleFactorial\SimpleFactorial.csproj", "{95C2DA19-BB80-467A-9A97-3F9C4E339845}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "simpleFactorial.Tests", "simpleFactorial.Tests\simpleFactorial.Tests.csproj", "{E78C73FB-ADAF-4EF5-BBA5-1B3C8BCAFCBC}"
 EndProject
