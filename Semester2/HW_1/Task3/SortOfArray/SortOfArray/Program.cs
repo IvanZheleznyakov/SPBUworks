@@ -40,7 +40,7 @@ namespace SortOfArray
         /// </summary>
         /// <param name="array">Array that need to sort.</param>
         /// <param name="sizeOfArray">Size of array.</param>
-        static void SelectionSort(int[] array, int sizeOfArray)
+        public static void SelectionSort(int[] array, int sizeOfArray)
         {
             for (int i = 1; i!=sizeOfArray; ++i)
             {
