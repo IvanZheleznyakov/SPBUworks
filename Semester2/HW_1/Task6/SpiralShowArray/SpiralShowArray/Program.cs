@@ -19,15 +19,16 @@ namespace SpiralShowArray
             const int down = 1;
             const int left = 2;
             const int up = 3;
-            int move = 0;
+            int move = up;
             int currentX = sizeOfMatrix / 2;
             int currentY = sizeOfMatrix / 2;
-            int currentNumberOfSteps = 1;
+            int currentNumberOfSteps = 0;
             Console.Write(matrix[currentX][currentY] + " ");
             int i = 0;
-            while (i != sizeOfMatrix*sizeOfMatrix - 1)
+            int numberOfOtherElements = sizeOfMatrix*sizeOfMatrix - 1;
+            while (i != numberOfOtherElements)
             {
-                if (move == up || move == down)
+                if ((move == up || move == down) && numberOfOtherElements - i + 1 != sizeOfMatrix)
                 {
                     ++currentNumberOfSteps;
                 }
@@ -39,7 +40,7 @@ namespace SpiralShowArray
                 {
                     move = right;
                 }
-                for (int j = 0; j!=currentNumberOfSteps; ++j)
+                for (int j = 0; j != currentNumberOfSteps; ++j)
                 {
                     switch (move)
                     {
@@ -64,9 +65,9 @@ namespace SpiralShowArray
                             }
                             break;
                     }
-                    Console.Write(matrix[currentX][currentY]);
+                    Console.Write(matrix[currentY][currentX] + " ");
+                    ++i;
                 }
-                ++i;
             }
         }
 
@@ -78,6 +79,8 @@ namespace SpiralShowArray
             {
                 matrix[i] = fileData[i].Split(default(string[]), StringSplitOptions.RemoveEmptyEntries).Select(x => int.Parse(x)).ToArray<int>();    
             }
+            Console.Write("Matrix: ");
+            SpiralShowMatrix(matrix, fileData.Length);
         }
     }
 }
