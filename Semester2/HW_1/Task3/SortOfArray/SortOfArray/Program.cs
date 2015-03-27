@@ -42,7 +42,7 @@ namespace SortOfArray
         /// <param name="sizeOfArray">Size of array.</param>
         public static void SelectionSort(int[] array, int sizeOfArray)
         {
-            for (int i = 1; i!=sizeOfArray; ++i)
+            for (int i = 1; i != sizeOfArray; ++i)
             {
                 int j = i;
                 while (j > 0 && array[j] < array[j-1])
