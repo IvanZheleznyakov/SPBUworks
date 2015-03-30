@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SpiralShowArray
 {
-    class Program
+    public class Program
     {
         /// <summary>
         /// Function show the matrix spirally.
