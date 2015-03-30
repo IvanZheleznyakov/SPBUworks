@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace ColumnSortMatrix
 {
-    class Program
+    public class Program
     {
         /// <summary>
         /// Show matrix on console.
         /// </summary>
-        static void showMatrix(int[][] matrix)
+        private static void showMatrix(int[][] matrix)
         {
             for (int i = 0; i != matrix.GetLength(0); ++i)
             {
@@ -26,7 +26,7 @@ namespace ColumnSortMatrix
         /// <summary>
         /// Selection sort on columns.
         /// </summary>
-        static void ColumnSelectionSort(int[][] matrix)
+        public static void ColumnSelectionSort(int[][] matrix)
         {
             for (int i = 1; i != matrix[0].GetLength(0); ++i)
             {
@@ -44,7 +44,7 @@ namespace ColumnSortMatrix
             }
         }
 
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             string[] fileData = System.IO.File.ReadAllLines("matrix.txt");
             int[][] matrix = new int[fileData.Length][];

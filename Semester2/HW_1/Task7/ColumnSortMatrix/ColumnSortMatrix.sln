@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColumnSortMatrix", "ColumnSortMatrix\ColumnSortMatrix.csproj", "{AEB61A8D-D103-4390-9469-B86A968CE26D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColumnSortMatrix.Tests", "ColumnSortMatrix.Tests\ColumnSortMatrix.Tests.csproj", "{63CE7D6F-5DB2-42A8-9628-ACCD797DFA73}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{AEB61A8D-D103-4390-9469-B86A968CE26D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEB61A8D-D103-4390-9469-B86A968CE26D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEB61A8D-D103-4390-9469-B86A968CE26D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63CE7D6F-5DB2-42A8-9628-ACCD797DFA73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63CE7D6F-5DB2-42A8-9628-ACCD797DFA73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63CE7D6F-5DB2-42A8-9628-ACCD797DFA73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63CE7D6F-5DB2-42A8-9628-ACCD797DFA73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
