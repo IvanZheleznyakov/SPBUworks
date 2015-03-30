@@ -13,8 +13,10 @@ namespace SpiralShowArray
         /// </summary>
         /// <param name="matrix">Matrix which will be shown.</param>
         /// <param name="sizeOfMatrix">Number of columns or strings.</param>
-        static void SpiralShowMatrix(int[][] matrix, int sizeOfMatrix)
+        public static string SpiralShowMatrix(int[][] matrix)
         {
+            int sizeOfMatrix = matrix.GetLength(0);
+            string result = "";
             const int right = 0;
             const int down = 1;
             const int left = 2;
@@ -25,7 +27,7 @@ namespace SpiralShowArray
             int currentNumberOfSteps = 0;
             Console.Write(matrix[currentX][currentY] + " ");
             int i = 0;
-            int numberOfOtherElements = sizeOfMatrix*sizeOfMatrix - 1;
+            int numberOfOtherElements = sizeOfMatrix * sizeOfMatrix - 1;
             while (i != numberOfOtherElements)
             {
                 if ((move == up || move == down) && numberOfOtherElements - i + 1 != sizeOfMatrix)
@@ -65,13 +67,14 @@ namespace SpiralShowArray
                             }
                             break;
                     }
-                    Console.Write(matrix[currentY][currentX] + " ");
+                    result += matrix[currentY][currentX].ToString() + ' ';
                     ++i;
                 }
             }
+            return result;
         }
 
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             string[] fileData = System.IO.File.ReadAllLines("matrix.txt");
             int[][] matrix = new int[fileData.Length][];
@@ -80,7 +83,7 @@ namespace SpiralShowArray
                 matrix[i] = fileData[i].Split(default(string[]), StringSplitOptions.RemoveEmptyEntries).Select(x => int.Parse(x)).ToArray<int>();    
             }
             Console.Write("Matrix: ");
-            SpiralShowMatrix(matrix, fileData.Length);
+            Console.WriteLine(SpiralShowMatrix(matrix));
         }
     }
 }
