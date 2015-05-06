@@ -25,7 +25,8 @@ namespace SpiralShowArray
             int currentX = sizeOfMatrix / 2;
             int currentY = sizeOfMatrix / 2;
             int currentNumberOfSteps = 0;
-            Console.Write(matrix[currentX][currentY] + " ");
+        //  Console.Write(matrix[currentX][currentY] + " ");
+            result += matrix[currentX][currentY].ToString() + ' ';
             int i = 0;
             int numberOfOtherElements = sizeOfMatrix * sizeOfMatrix - 1;
             while (i != numberOfOtherElements)
