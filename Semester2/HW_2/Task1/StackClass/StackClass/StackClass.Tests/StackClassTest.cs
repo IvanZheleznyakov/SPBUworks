@@ -37,7 +37,7 @@ namespace StackClass.Tests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(System.NullReferenceException))]
+        [ExpectedException(typeof(ExtractFromEmptyStackException))]
         public void PopWithoutPushTest()
         {
             Stack stack = new Stack();
