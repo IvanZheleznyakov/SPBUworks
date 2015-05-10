@@ -37,6 +37,10 @@ namespace StackClass
 
         public int Pop()
         {
+            if (head == null)
+            {
+                throw new NullReferenceException();
+            }
             var temp = head.Value;
             head = head.Next;
             return temp;
