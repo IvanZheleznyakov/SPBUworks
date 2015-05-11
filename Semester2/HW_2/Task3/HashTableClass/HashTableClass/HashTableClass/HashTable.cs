@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace HashTableClass
 {
-    class HashTable
+    public class HashTable
     {
-        HashTable(int capacity = 50)
+        public HashTable(int capacity = 50)
         {
             Capacity = capacity;
+            LinkedList<string>[] HashTableArray = new LinkedList<string>[Capacity];
         }
 
         /// <summary>
@@ -35,7 +36,17 @@ namespace HashTableClass
         public void AddHashElement(string value)
         {
             int index = HashFunction(value);
-            HashTable[index].AddUniqueElement(value);
+            HashTableArray[index].AddUniqueElement(value);
+        }
+
+        /// <summary>
+        /// Delete element with specified value from hashtable.
+        /// </summary>
+        /// <param name="value"></param>
+        public void DeleteElement(string value)
+        {
+            int index = HashFunction(value);
+            HashTableArray[index].DeleteElement(value);
         }
 
         /// <summary>
@@ -46,9 +57,9 @@ namespace HashTableClass
         public bool IsElementInHashTable(string value)
         {
             int index = HashFunction(value);
-            return HashTable[index].IsElementInList(value);
+            return HashTableArray[index].IsElementInList(value);
         }
         public static int Capacity { get; private set; }
-        public LinkedList<string>[] HashTable = new LinkedList<string>[Capacity];
+        public LinkedList<string>[] HashTableArray;
     }
 }

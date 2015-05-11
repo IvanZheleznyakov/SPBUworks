@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HashTableClass
 {
-    class LinkedList<T>
+    public class LinkedList<T>
     {
         class ListElement
         {
