@@ -11,18 +11,34 @@ namespace LinkedListClass.Tests
         {
             LinkedList list = new LinkedList();
             Assert.AreEqual(true, list.IsListEmpty());
+            list.AddElement(1);
+            Assert.AreEqual(false, list.IsListEmpty());
+            list.RemoveElement();
+            Assert.AreEqual(true, list.IsListEmpty());
+        }
+
+        [TestMethod]
+        public void AddElementsTest()
+        {
+            LinkedList list = new LinkedList();
+            list.AddElement(3);
+            list.AddElement(5);
+            list.AddElement(7);
+            Assert.AreEqual(7, list.RemoveElement());
+            list.AddElement(9);
+            Assert.AreEqual(9, list.RemoveElement());
+            list.AddElement(11);
+            Assert.AreEqual(11, list.RemoveElement());
+            Assert.AreEqual(5, list.RemoveElement());
+            Assert.AreEqual(3, list.RemoveElement());
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(RemoveFromEmptyListException))]
+        public void RemoveWithoutAddTest()
+        {
+            LinkedList list = new LinkedList();
+            list.RemoveElement();
         }
     }
 }
-            //LinkedList list = new LinkedList();
-            //list.AddElement(3);
-            //list.AddElement(5);
-            //list.AddElement(7);
-            //Console.WriteLine(list.RemoveElement());
-            //list.AddElement(9);
-            //Console.WriteLine(list.RemoveElement());
-            //list.AddElement(11);
-            //Console.WriteLine(list.RemoveElement());
-            //Console.WriteLine(list.RemoveElement());
-            //Console.WriteLine(list.RemoveElement());
-            //Console.WriteLine(list.RemoveElement());
