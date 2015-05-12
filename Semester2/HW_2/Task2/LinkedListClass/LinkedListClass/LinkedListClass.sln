@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedListClass", "LinkedListClass\LinkedListClass.csproj", "{19E5CC38-F7AE-4146-A712-ADAEA3C6F166}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedListClass.Tests", "LinkedListClass.Tests\LinkedListClass.Tests.csproj", "{917CB5E0-95B0-43CF-902D-64340876EF1E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19E5CC38-F7AE-4146-A712-ADAEA3C6F166}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19E5CC38-F7AE-4146-A712-ADAEA3C6F166}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19E5CC38-F7AE-4146-A712-ADAEA3C6F166}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19E5CC38-F7AE-4146-A712-ADAEA3C6F166}.Release|Any CPU.Build.0 = Release|Any CPU
+		{917CB5E0-95B0-43CF-902D-64340876EF1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{917CB5E0-95B0-43CF-902D-64340876EF1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{917CB5E0-95B0-43CF-902D-64340876EF1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{917CB5E0-95B0-43CF-902D-64340876EF1E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
