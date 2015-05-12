@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalculatorStack.cs" />
     <Compile Include="IStack.cs" />
     <Compile Include="ExtractFromEmptyStackException.cs" />
+    <Compile Include="AddedWrongValueToCalc.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StackArray.cs" />

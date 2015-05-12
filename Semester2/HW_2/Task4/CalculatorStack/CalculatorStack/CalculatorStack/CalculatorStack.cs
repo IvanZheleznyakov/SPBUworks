@@ -93,5 +93,14 @@ namespace CalculatorStack
 
             throw new AddedWrongValueToCalc("Trying to add not operand or operator.");
         }
+
+        /// <summary>
+        /// Take current expression.
+        /// </summary>
+        /// <returns></returns>
+        public int TakeCurrentExpression()
+        {
+            return stack.Pop();
+        }
     }
 }

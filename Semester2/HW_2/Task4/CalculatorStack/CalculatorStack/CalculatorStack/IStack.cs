@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CalculatorStack
 {
-    interface IStack<T>
+    public interface IStack<T>
     {
         /// <summary>
         /// Push element to stack.
