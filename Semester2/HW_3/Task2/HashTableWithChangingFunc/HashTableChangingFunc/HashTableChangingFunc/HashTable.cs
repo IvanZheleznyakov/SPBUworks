@@ -43,6 +43,15 @@ namespace HashTableClass
         }
 
         /// <summary>
+        /// Change hashfunction.
+        /// </summary>
+        /// <param name="hashFunc"></param>
+        public void ChangeHashFunction(UsingHashFunction hashFunc)
+        {
+            usingHashFunc = hashFunc;
+        }
+
+        /// <summary>
         /// Add element to hashtable.
         /// </summary>
         /// <param name="value"></param>
