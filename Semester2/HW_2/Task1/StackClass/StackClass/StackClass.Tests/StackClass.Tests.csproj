@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3BF801CB-A3BB-4F3F-96B8-D365069931D3}</ProjectGuid>
+    <ProjectGuid>{98856B68-FE40-4324-B619-09467D1FED1B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>StackClass.Tests</RootNamespace>
@@ -55,7 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StackClass\StackClass.csproj">
-      <Project>{a6ad144e-a8d5-4cba-bad9-ee7a3e9fbca2}</Project>
+      <Project>{45a7a6e3-187f-46cf-b694-9ac390af3ed3}</Project>
       <Name>StackClass</Name>
     </ProjectReference>
   </ItemGroup>
