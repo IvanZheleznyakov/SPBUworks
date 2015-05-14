@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FoldFunction
+namespace FilterFunction
 {
-    public class FoldFunction<T>
+    public class FilterFunction<T>
     {
-        public static List<T> Fold(List<T> list, Func<T, bool> function)
+        public static List<T> Filter(List<T> list, Func<T, bool> function)
         {
             var resultList = new List<T>();
 

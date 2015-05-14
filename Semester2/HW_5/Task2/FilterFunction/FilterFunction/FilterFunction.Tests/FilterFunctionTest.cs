@@ -17,7 +17,7 @@ namespace FoldFunction.Tests
             list.Add(-2);
             list.Add(2);
             list.Add(-3);
-            list = FoldFunction<int>.Fold(list, x => (x < 0));
+            list = FilterFunction<int>.Filter(list, x => (x < 0));
             Assert.AreEqual(3, list.Count);
             Assert.AreEqual(3, list.Count(x => (x < 0)));
         }
