@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapFunction", "MapFunction\MapFunction.csproj", "{5A8823FB-A937-4D8C-B034-C767C5E15E1D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapFunction.Tests", "MapFunction.Tests\MapFunction.Tests.csproj", "{BD4C1446-9D05-4EFD-A9EF-2CE6DB89D395}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{5A8823FB-A937-4D8C-B034-C767C5E15E1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A8823FB-A937-4D8C-B034-C767C5E15E1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A8823FB-A937-4D8C-B034-C767C5E15E1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD4C1446-9D05-4EFD-A9EF-2CE6DB89D395}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD4C1446-9D05-4EFD-A9EF-2CE6DB89D395}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD4C1446-9D05-4EFD-A9EF-2CE6DB89D395}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD4C1446-9D05-4EFD-A9EF-2CE6DB89D395}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
