@@ -12,7 +12,7 @@ namespace TreeExpression
         /// Add new element to current element.
         /// </summary>
         /// <param name="newTreeElement"></param>
-        void AddElement(ITreeElement newTreeElement);
+        void AddElement(ITreeElement newTreeElement, ref bool elementIsAdded);
 
         /// <summary>
         /// Count element.

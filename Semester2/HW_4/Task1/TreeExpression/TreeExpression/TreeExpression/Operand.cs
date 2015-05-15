@@ -14,7 +14,7 @@ namespace TreeExpression
         /// Trying to add element to operand.
         /// </summary>
         /// <param name="newTreeElement"></param>
-        public void AddElement(ITreeElement newTreeElement)
+        public void AddElement(ITreeElement newTreeElement, ref bool elementIsAdded)
         {
             throw new AddToOperandException();
         }

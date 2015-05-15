@@ -8,14 +8,17 @@ namespace TreeExpression
 {
     public class ReadExpression
     {
-        public void ReadExpressionFromString(Tree tree, string expression)
+        public static void ReadExpressionFromString(Tree tree, string expression)
         {
-            while (expression.Length != 0)
+            while (expression.Length != 1)
             {
                 string OperatorOrOperand = expression.Remove(expression.IndexOf(' '));
 
                 switch (OperatorOrOperand)
                 {
+                    case "(":
+                    case ")":
+                        break;
                     case "+":
                     case "-":
                     case "*":

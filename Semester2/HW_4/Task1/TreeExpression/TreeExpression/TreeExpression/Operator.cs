@@ -16,28 +16,36 @@ namespace TreeExpression
         /// Add element to this operator.
         /// </summary>
         /// <param name="newTreeElement"></param>
-        public void AddElement(ITreeElement newTreeElement)
+        public void AddElement(ITreeElement newTreeElement, ref bool elementIsAdded)
         {
-            if (Left == null)
+            if (!elementIsAdded)
             {
-                Left = newTreeElement;
-                return;
+                if (Left == null)
+                {
+                    Left = newTreeElement;
+                    elementIsAdded = true;
+                    return;
+                }
+
+                if (Left is Operator)
+                {
+                    Left.AddElement(newTreeElement, ref elementIsAdded);
+                }
             }
 
-            if (Left is Operator)
+            if (!elementIsAdded)
             {
-                Left.AddElement(newTreeElement);
-            }
+                if (Right == null)
+                {
+                    Right = newTreeElement;
+                    elementIsAdded = true;
+                    return;
+                }
 
-            if (Right == null)
-            {
-                Right = newTreeElement;
-                return;
-            }
-
-            if (Right is Operator)
-            {
-                Right.AddElement(newTreeElement);
+                if (Right is Operator)
+                {
+                    Right.AddElement(newTreeElement, ref elementIsAdded);
+                }
             }
         }
 

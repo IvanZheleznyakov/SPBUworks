@@ -29,7 +29,8 @@ namespace TreeExpression
                 return;
             }
 
-            head.AddElement(newTreeElement);
+            bool elementIsAdded = false;
+            head.AddElement(newTreeElement, ref elementIsAdded);
         }
 
         /// <summary>
@@ -43,7 +44,8 @@ namespace TreeExpression
                 Value = value,
             };
 
-            head.AddElement(newTreeElement);
+            bool elementIsAdded = false;
+            head.AddElement(newTreeElement, ref elementIsAdded);
         }
 
         /// <summary>
