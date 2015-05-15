@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddToOperandException.cs" />
+    <Compile Include="ReadExpression.cs" />
     <Compile Include="WrongOperatorException.cs" />
     <Compile Include="Operand.cs" />
     <Compile Include="Operator.cs" />
@@ -52,6 +53,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="expression.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
