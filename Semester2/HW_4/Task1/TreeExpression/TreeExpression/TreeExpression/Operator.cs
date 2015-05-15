@@ -12,6 +12,10 @@ namespace TreeExpression
         public ITreeElement Left { get; set; }
         public ITreeElement Right { get; set; }
 
+        /// <summary>
+        /// Add element to this operator.
+        /// </summary>
+        /// <param name="newTreeElement"></param>
         public void AddElement(ITreeElement newTreeElement)
         {
             if (Left == null)
@@ -37,6 +41,10 @@ namespace TreeExpression
             }
         }
 
+        /// <summary>
+        /// Count this element.
+        /// </summary>
+        /// <returns></returns>
         public int CountIt()
         {
             switch (Value)
@@ -54,6 +62,10 @@ namespace TreeExpression
             }
         }
 
+        /// <summary>
+        /// Print operator with him operands.
+        /// </summary>
+        /// <returns></returns>
         public string PrintElement()
         {
             return "(" + Left.PrintElement() + " " + Value.ToString() + " " + Right.PrintElement() + ")";

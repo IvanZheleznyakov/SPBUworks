@@ -10,6 +10,10 @@ namespace TreeExpression
     {
         private Operator head = null;
         
+        /// <summary>
+        /// Add new operator to tree.
+        /// </summary>
+        /// <param name="value"></param>
         public void AddTreeElement(char value)
         {
             var newTreeElement = new Operator()
@@ -28,6 +32,10 @@ namespace TreeExpression
             head.AddElement(newTreeElement);
         }
 
+        /// <summary>
+        /// Add new operand to tree.
+        /// </summary>
+        /// <param name="value"></param>
         public void AddTreeElement(int value)
         {
             var newTreeElement = new Operand()
@@ -38,11 +46,19 @@ namespace TreeExpression
             head.AddElement(newTreeElement);
         }
 
+        /// <summary>
+        /// Count expression that is inside tree.
+        /// </summary>
+        /// <returns></returns>
         public int CountTree()
         {
             return head.CountIt();
         }
 
+        /// <summary>
+        /// Print expression that is inside tree.
+        /// </summary>
+        /// <returns></returns>
         public string PrintTree()
         {
             return head.PrintElement();

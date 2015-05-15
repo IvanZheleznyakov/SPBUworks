@@ -8,10 +8,22 @@ namespace TreeExpression
 {
     public interface ITreeElement
     {
+        /// <summary>
+        /// Add new element to current element.
+        /// </summary>
+        /// <param name="newTreeElement"></param>
         void AddElement(ITreeElement newTreeElement);
 
+        /// <summary>
+        /// Count element.
+        /// </summary>
+        /// <returns></returns>
         int CountIt();
 
+        /// <summary>
+        /// Print element.
+        /// </summary>
+        /// <returns></returns>
         string PrintElement();
     }
 }
