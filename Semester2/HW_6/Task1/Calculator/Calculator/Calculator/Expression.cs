@@ -28,8 +28,19 @@ namespace Calculator
             Operation = operation;
         }
 
+        public void Clear()
+        {
+            FirstNumber = "0";
+            SecondNumber = null;
+        }
+
         public string Count()
         {
+            if (SecondNumber == null)
+            {
+                return FirstNumber;
+            }
+
             switch (Operation)
             {
                 case '+':
@@ -51,7 +62,7 @@ namespace Calculator
                     FirstNumber = Convert.ToString(Convert.ToDouble(FirstNumber) / Convert.ToDouble(SecondNumber));
                     return FirstNumber;
                 default:
-                    return "Error";
+                    return SecondNumber;
             }
         }
     }

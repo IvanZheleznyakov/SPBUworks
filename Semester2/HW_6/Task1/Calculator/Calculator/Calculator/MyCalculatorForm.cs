@@ -17,9 +17,20 @@ namespace Calculator
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void OnButtonClearClick(object sender, EventArgs e)
         {
-            
+            this.OutputResult.Text = "0";
+            expression.Clear();
+        }
+
+        private void OnButtonChangeSignClick(object sender, EventArgs e)
+        {
+            if (this.OutputResult.Text[0] == '-')
+            {
+                this.OutputResult.Text = this.OutputResult.Text.Remove(0, 1);
+                return;
+            }
+            this.OutputResult.Text = "-" + this.OutputResult.Text;
         }
     }
 }

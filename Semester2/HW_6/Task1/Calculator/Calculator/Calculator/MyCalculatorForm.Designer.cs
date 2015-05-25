@@ -234,6 +234,7 @@
             this.ButtonChangeSign.TabIndex = 5;
             this.ButtonChangeSign.Text = "+/-";
             this.ButtonChangeSign.UseVisualStyleBackColor = false;
+            this.ButtonChangeSign.Click += new System.EventHandler(this.OnButtonChangeSignClick);
             // 
             // ButtonClear
             // 
@@ -249,6 +250,7 @@
             this.ButtonClear.TabIndex = 6;
             this.ButtonClear.Text = "C";
             this.ButtonClear.UseVisualStyleBackColor = false;
+            this.ButtonClear.Click += new System.EventHandler(this.OnButtonClearClick);
             // 
             // Button1
             // 
@@ -408,7 +410,6 @@
             this.TableLayout.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
 
         }
 
