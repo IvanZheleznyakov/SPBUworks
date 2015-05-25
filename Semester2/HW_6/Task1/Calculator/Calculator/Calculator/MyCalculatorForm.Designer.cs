@@ -35,7 +35,7 @@
             this.ButtonMinus = new System.Windows.Forms.Button();
             this.ButtonMultiplication = new System.Windows.Forms.Button();
             this.ButtonDivision = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.TableLayout = new System.Windows.Forms.TableLayoutPanel();
             this.ButtonPercent = new System.Windows.Forms.Button();
             this.ButtonChangeSign = new System.Windows.Forms.Button();
             this.ButtonClear = new System.Windows.Forms.Button();
@@ -48,8 +48,8 @@
             this.Button7 = new System.Windows.Forms.Button();
             this.Button8 = new System.Windows.Forms.Button();
             this.Button9 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.OutputResult = new System.Windows.Forms.TextBox();
+            this.TableLayout.SuspendLayout();
             this.SuspendLayout();
             // 
             // ButtonEqual
@@ -88,7 +88,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Button0.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.Button0, 2);
+            this.TableLayout.SetColumnSpan(this.Button0, 2);
             this.Button0.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Button0.Location = new System.Drawing.Point(3, 263);
             this.Button0.Name = "Button0";
@@ -161,49 +161,49 @@
             this.ButtonDivision.Text = "/";
             this.ButtonDivision.UseVisualStyleBackColor = false;
             // 
-            // tableLayoutPanel1
+            // TableLayout
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TableLayout.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.AutoSize = true;
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Controls.Add(this.Button0, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.ButtonPoint, 2, 5);
-            this.tableLayoutPanel1.Controls.Add(this.ButtonEqual, 3, 5);
-            this.tableLayoutPanel1.Controls.Add(this.ButtonPlus, 3, 4);
-            this.tableLayoutPanel1.Controls.Add(this.ButtonMinus, 3, 3);
-            this.tableLayoutPanel1.Controls.Add(this.ButtonMultiplication, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.ButtonDivision, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.ButtonPercent, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.ButtonChangeSign, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.ButtonClear, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.Button1, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.Button2, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.Button3, 2, 4);
-            this.tableLayoutPanel1.Controls.Add(this.Button4, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.Button5, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.Button6, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.Button7, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.Button8, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.Button9, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.43306F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.71339F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.71339F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.48387F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.12903F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.48387F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(208, 310);
-            this.tableLayoutPanel1.TabIndex = 4;
+            this.TableLayout.AutoSize = true;
+            this.TableLayout.ColumnCount = 4;
+            this.TableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.TableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.TableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.TableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.TableLayout.Controls.Add(this.Button0, 0, 5);
+            this.TableLayout.Controls.Add(this.ButtonPoint, 2, 5);
+            this.TableLayout.Controls.Add(this.ButtonEqual, 3, 5);
+            this.TableLayout.Controls.Add(this.ButtonPlus, 3, 4);
+            this.TableLayout.Controls.Add(this.ButtonMinus, 3, 3);
+            this.TableLayout.Controls.Add(this.ButtonMultiplication, 3, 2);
+            this.TableLayout.Controls.Add(this.ButtonDivision, 3, 1);
+            this.TableLayout.Controls.Add(this.ButtonPercent, 2, 1);
+            this.TableLayout.Controls.Add(this.ButtonChangeSign, 1, 1);
+            this.TableLayout.Controls.Add(this.ButtonClear, 0, 1);
+            this.TableLayout.Controls.Add(this.Button1, 0, 4);
+            this.TableLayout.Controls.Add(this.Button2, 1, 4);
+            this.TableLayout.Controls.Add(this.Button3, 2, 4);
+            this.TableLayout.Controls.Add(this.Button4, 0, 3);
+            this.TableLayout.Controls.Add(this.Button5, 1, 3);
+            this.TableLayout.Controls.Add(this.Button6, 2, 3);
+            this.TableLayout.Controls.Add(this.Button7, 0, 2);
+            this.TableLayout.Controls.Add(this.Button8, 1, 2);
+            this.TableLayout.Controls.Add(this.Button9, 2, 2);
+            this.TableLayout.Controls.Add(this.OutputResult, 0, 0);
+            this.TableLayout.Location = new System.Drawing.Point(12, 12);
+            this.TableLayout.Name = "TableLayout";
+            this.TableLayout.RowCount = 6;
+            this.TableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.43306F));
+            this.TableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.71339F));
+            this.TableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.71339F));
+            this.TableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.48387F));
+            this.TableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.12903F));
+            this.TableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.48387F));
+            this.TableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.TableLayout.Size = new System.Drawing.Size(208, 310);
+            this.TableLayout.TabIndex = 4;
             // 
             // ButtonPercent
             // 
@@ -376,23 +376,23 @@
             this.Button9.Text = "9";
             this.Button9.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // OutputResult
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.OutputResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tableLayoutPanel1.SetColumnSpan(this.textBox1, 4);
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.Info;
-            this.textBox1.Location = new System.Drawing.Point(3, 3);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(202, 60);
-            this.textBox1.TabIndex = 16;
-            this.textBox1.Text = "check";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.OutputResult.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.TableLayout.SetColumnSpan(this.OutputResult, 4);
+            this.OutputResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.OutputResult.ForeColor = System.Drawing.SystemColors.Info;
+            this.OutputResult.Location = new System.Drawing.Point(3, 3);
+            this.OutputResult.Multiline = true;
+            this.OutputResult.Name = "OutputResult";
+            this.OutputResult.ReadOnly = true;
+            this.OutputResult.Size = new System.Drawing.Size(202, 60);
+            this.OutputResult.TabIndex = 16;
+            this.OutputResult.Text = "0";
+            this.OutputResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // MyCalculatorForm
             // 
@@ -400,19 +400,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(232, 334);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.TableLayout);
             this.MinimumSize = new System.Drawing.Size(248, 363);
             this.Name = "MyCalculatorForm";
             this.Text = "MyCalculator";
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.TableLayout.ResumeLayout(false);
+            this.TableLayout.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+
 
         }
 
         #endregion
 
+        private Expression expression = new Expression();
         private System.Windows.Forms.Button ButtonEqual;
         private System.Windows.Forms.Button ButtonPoint;
         private System.Windows.Forms.Button Button0;
@@ -420,7 +422,7 @@
         private System.Windows.Forms.Button ButtonMinus;
         private System.Windows.Forms.Button ButtonMultiplication;
         private System.Windows.Forms.Button ButtonDivision;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel TableLayout;
         private System.Windows.Forms.Button ButtonPercent;
         private System.Windows.Forms.Button ButtonChangeSign;
         private System.Windows.Forms.Button ButtonClear;
@@ -433,7 +435,7 @@
         private System.Windows.Forms.Button Button7;
         private System.Windows.Forms.Button Button8;
         private System.Windows.Forms.Button Button9;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox OutputResult;
     }
 }
 
