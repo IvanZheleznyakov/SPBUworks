@@ -31,6 +31,8 @@
             this.LayoutForOutputResult = new System.Windows.Forms.FlowLayoutPanel();
             this.TableLayoutForUpButtons = new System.Windows.Forms.TableLayoutPanel();
             this.TableLayoutForDownButtons = new System.Windows.Forms.TableLayoutPanel();
+            this.ButtonEqual = new System.Windows.Forms.Button();
+            this.TableLayoutForDownButtons.SuspendLayout();
             this.SuspendLayout();
             // 
             // LayoutForOutputResult
@@ -75,12 +77,26 @@
             this.TableLayoutForDownButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.TableLayoutForDownButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.TableLayoutForDownButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.TableLayoutForDownButtons.Controls.Add(this.ButtonEqual, 2, 0);
             this.TableLayoutForDownButtons.Location = new System.Drawing.Point(12, 263);
             this.TableLayoutForDownButtons.Name = "TableLayoutForDownButtons";
             this.TableLayoutForDownButtons.RowCount = 1;
             this.TableLayoutForDownButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.TableLayoutForDownButtons.Size = new System.Drawing.Size(208, 49);
             this.TableLayoutForDownButtons.TabIndex = 2;
+            // 
+            // ButtonEqual
+            // 
+            this.ButtonEqual.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonEqual.AutoSize = true;
+            this.ButtonEqual.Location = new System.Drawing.Point(159, 3);
+            this.ButtonEqual.Name = "ButtonEqual";
+            this.ButtonEqual.Size = new System.Drawing.Size(46, 43);
+            this.ButtonEqual.TabIndex = 0;
+            this.ButtonEqual.Text = "=";
+            this.ButtonEqual.UseVisualStyleBackColor = true;
             // 
             // MyCalculatorForm
             // 
@@ -93,6 +109,8 @@
             this.MinimumSize = new System.Drawing.Size(248, 363);
             this.Name = "MyCalculatorForm";
             this.Text = "MyCalculator";
+            this.TableLayoutForDownButtons.ResumeLayout(false);
+            this.TableLayoutForDownButtons.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -103,6 +121,7 @@
         private System.Windows.Forms.FlowLayoutPanel LayoutForOutputResult;
         private System.Windows.Forms.TableLayoutPanel TableLayoutForUpButtons;
         private System.Windows.Forms.TableLayoutPanel TableLayoutForDownButtons;
+        private System.Windows.Forms.Button ButtonEqual;
     }
 }
 
