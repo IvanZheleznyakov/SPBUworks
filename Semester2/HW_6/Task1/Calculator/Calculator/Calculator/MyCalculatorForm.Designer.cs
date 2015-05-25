@@ -28,50 +28,68 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.TableLayoutForButtons = new System.Windows.Forms.TableLayoutPanel();
+            this.LayoutForOutputResult = new System.Windows.Forms.FlowLayoutPanel();
+            this.TableLayoutForUpButtons = new System.Windows.Forms.TableLayoutPanel();
+            this.TableLayoutForDownButtons = new System.Windows.Forms.TableLayoutPanel();
             this.SuspendLayout();
             // 
-            // flowLayoutPanel1
+            // LayoutForOutputResult
             // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.LayoutForOutputResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 12);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(208, 50);
-            this.flowLayoutPanel1.TabIndex = 0;
+            this.LayoutForOutputResult.AutoSize = true;
+            this.LayoutForOutputResult.Location = new System.Drawing.Point(12, 12);
+            this.LayoutForOutputResult.Name = "LayoutForOutputResult";
+            this.LayoutForOutputResult.Size = new System.Drawing.Size(208, 50);
+            this.LayoutForOutputResult.TabIndex = 0;
             // 
-            // TableLayoutForButtons
+            // TableLayoutForUpButtons
             // 
-            this.TableLayoutForButtons.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TableLayoutForUpButtons.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TableLayoutForButtons.AutoSize = true;
-            this.TableLayoutForButtons.ColumnCount = 4;
-            this.TableLayoutForButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.TableLayoutForButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.TableLayoutForButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.TableLayoutForButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.TableLayoutForButtons.Location = new System.Drawing.Point(12, 68);
-            this.TableLayoutForButtons.Name = "TableLayoutForButtons";
-            this.TableLayoutForButtons.RowCount = 5;
-            this.TableLayoutForButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.TableLayoutForButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.TableLayoutForButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.TableLayoutForButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.TableLayoutForButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.TableLayoutForButtons.Size = new System.Drawing.Size(208, 244);
-            this.TableLayoutForButtons.TabIndex = 1;
+            this.TableLayoutForUpButtons.AutoSize = true;
+            this.TableLayoutForUpButtons.ColumnCount = 4;
+            this.TableLayoutForUpButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.TableLayoutForUpButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.TableLayoutForUpButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.TableLayoutForUpButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.TableLayoutForUpButtons.Location = new System.Drawing.Point(12, 68);
+            this.TableLayoutForUpButtons.Name = "TableLayoutForUpButtons";
+            this.TableLayoutForUpButtons.RowCount = 4;
+            this.TableLayoutForUpButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.TableLayoutForUpButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.TableLayoutForUpButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.TableLayoutForUpButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.TableLayoutForUpButtons.Size = new System.Drawing.Size(208, 196);
+            this.TableLayoutForUpButtons.TabIndex = 1;
+            // 
+            // TableLayoutForDownButtons
+            // 
+            this.TableLayoutForDownButtons.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TableLayoutForDownButtons.AutoSize = true;
+            this.TableLayoutForDownButtons.ColumnCount = 3;
+            this.TableLayoutForDownButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.TableLayoutForDownButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.TableLayoutForDownButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.TableLayoutForDownButtons.Location = new System.Drawing.Point(12, 263);
+            this.TableLayoutForDownButtons.Name = "TableLayoutForDownButtons";
+            this.TableLayoutForDownButtons.RowCount = 1;
+            this.TableLayoutForDownButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.TableLayoutForDownButtons.Size = new System.Drawing.Size(208, 49);
+            this.TableLayoutForDownButtons.TabIndex = 2;
             // 
             // MyCalculatorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(232, 324);
-            this.Controls.Add(this.TableLayoutForButtons);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.TableLayoutForDownButtons);
+            this.Controls.Add(this.TableLayoutForUpButtons);
+            this.Controls.Add(this.LayoutForOutputResult);
             this.MinimumSize = new System.Drawing.Size(248, 363);
             this.Name = "MyCalculatorForm";
             this.Text = "MyCalculator";
@@ -82,8 +100,9 @@
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel TableLayoutForButtons;
+        private System.Windows.Forms.FlowLayoutPanel LayoutForOutputResult;
+        private System.Windows.Forms.TableLayoutPanel TableLayoutForUpButtons;
+        private System.Windows.Forms.TableLayoutPanel TableLayoutForDownButtons;
     }
 }
 
