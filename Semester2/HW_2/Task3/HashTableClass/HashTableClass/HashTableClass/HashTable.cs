@@ -11,6 +11,7 @@ namespace HashTableClass
         public HashTable(int capacity = 50)
         {
             Capacity = capacity;
+            HashTableArray = new MyLinkedList<string>[capacity];
             for (int i = 0; i != capacity; ++i)
             {
                 HashTableArray[i] = new MyLinkedList<string>();
@@ -22,7 +23,7 @@ namespace HashTableClass
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public int HashFunction(string value)
+        private int HashFunction(string value)
         {
             int result = 0;
             for (int i = 0; i != value.Length; ++i)
@@ -63,7 +64,7 @@ namespace HashTableClass
             return HashTableArray[index].IsElementInList(value);
         }
 
-        public static int Capacity = 50;
-        public MyLinkedList<string>[] HashTableArray = new MyLinkedList<string>[Capacity];
+        private int Capacity;
+        public MyLinkedList<string>[] HashTableArray;
     }
 }
