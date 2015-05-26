@@ -169,9 +169,10 @@ namespace Calculator
         {
             expression.Add(this.OutputResult.Text);
             this.OutputResult.Text = expression.Count();
-            expression.FirstNumber = this.OutputResult.Text;
+            expression.Clear();
+  //          expression.FirstNumber = this.OutputResult.Text;
   //          expression.SecondNumber = null;
-            lastClickOnOperation = false;
+            lastClickOnOperation = true;
         }
 
         private void OnButtonMinusClick(object sender, EventArgs e)
