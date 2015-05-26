@@ -67,6 +67,7 @@
             this.ButtonEqual.TabIndex = 0;
             this.ButtonEqual.Text = "=";
             this.ButtonEqual.UseVisualStyleBackColor = false;
+            this.ButtonEqual.Click += new System.EventHandler(this.OnButtonEqualClick);
             // 
             // ButtonPoint
             // 
@@ -79,8 +80,9 @@
             this.ButtonPoint.Name = "ButtonPoint";
             this.ButtonPoint.Size = new System.Drawing.Size(46, 44);
             this.ButtonPoint.TabIndex = 1;
-            this.ButtonPoint.Text = ".";
+            this.ButtonPoint.Text = ",";
             this.ButtonPoint.UseVisualStyleBackColor = true;
+            this.ButtonPoint.Click += new System.EventHandler(this.OnButtonPointClick);
             // 
             // Button0
             // 
@@ -113,6 +115,7 @@
             this.ButtonPlus.TabIndex = 0;
             this.ButtonPlus.Text = "+";
             this.ButtonPlus.UseVisualStyleBackColor = false;
+            this.ButtonPlus.Click += new System.EventHandler(this.OnButtonPlusClick);
             // 
             // ButtonMinus
             // 
@@ -129,6 +132,7 @@
             this.ButtonMinus.TabIndex = 1;
             this.ButtonMinus.Text = "-";
             this.ButtonMinus.UseVisualStyleBackColor = false;
+            this.ButtonMinus.Click += new System.EventHandler(this.OnButtonMinusClick);
             // 
             // ButtonMultiplication
             // 
@@ -145,6 +149,7 @@
             this.ButtonMultiplication.TabIndex = 2;
             this.ButtonMultiplication.Text = "*";
             this.ButtonMultiplication.UseVisualStyleBackColor = false;
+            this.ButtonMultiplication.Click += new System.EventHandler(this.OnButtonMultiplicationClick);
             // 
             // ButtonDivision
             // 
@@ -161,6 +166,7 @@
             this.ButtonDivision.TabIndex = 3;
             this.ButtonDivision.Text = "/";
             this.ButtonDivision.UseVisualStyleBackColor = false;
+            this.ButtonDivision.Click += new System.EventHandler(this.OnButtonDivisionClick);
             // 
             // TableLayout
             // 
@@ -220,6 +226,7 @@
             this.ButtonPercent.TabIndex = 4;
             this.ButtonPercent.Text = "%";
             this.ButtonPercent.UseVisualStyleBackColor = false;
+            this.ButtonPercent.Click += new System.EventHandler(this.OnButtonPercentClick);
             // 
             // ButtonChangeSign
             // 
@@ -425,7 +432,6 @@
 
         #endregion
 
-        private Expression expression = new Expression();
         private System.Windows.Forms.Button ButtonEqual;
         private System.Windows.Forms.Button ButtonPoint;
         private System.Windows.Forms.Button Button0;
