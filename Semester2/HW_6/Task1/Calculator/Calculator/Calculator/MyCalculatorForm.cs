@@ -161,7 +161,7 @@ namespace Calculator
         {
             expression.Add(this.OutputResult.Text);
             expression.Add('+');
-            this.OutputResult.Text = expression.Count();
+//            this.OutputResult.Text = expression.Count();
             lastClickOnOperation = true;
         }
 
@@ -169,16 +169,16 @@ namespace Calculator
         {
             expression.Add(this.OutputResult.Text);
             this.OutputResult.Text = expression.Count();
-            expression.Clear();
-            expression.Add(this.OutputResult.Text);
-            lastClickOnOperation = true;
+            expression.FirstNumber = this.OutputResult.Text;
+  //          expression.SecondNumber = null;
+            lastClickOnOperation = false;
         }
 
         private void OnButtonMinusClick(object sender, EventArgs e)
         {
             expression.Add(this.OutputResult.Text);
             expression.Add('-');
-            this.OutputResult.Text = expression.Count();
+ //           this.OutputResult.Text = expression.Count();
             lastClickOnOperation = true;
         }
 
@@ -186,7 +186,7 @@ namespace Calculator
         {
             expression.Add(this.OutputResult.Text);
             expression.Add('*');
-            this.OutputResult.Text = expression.Count();
+  //          this.OutputResult.Text = expression.Count();
             lastClickOnOperation = true;
         }
 
@@ -194,12 +194,16 @@ namespace Calculator
         {
             expression.Add(this.OutputResult.Text);
             expression.Add('/');
-            this.OutputResult.Text = expression.Count();
+  //          this.OutputResult.Text = expression.Count();
             lastClickOnOperation = true;
         }
 
         private void OnButtonPercentClick(object sender, EventArgs e)
         {
+            if (expression.FirstNumber == null)
+            {
+                expression.Add(this.OutputResult.Text);
+            }
             expression.Add("0,01");
             expression.Add('*');
             this.OutputResult.Text = expression.Count();

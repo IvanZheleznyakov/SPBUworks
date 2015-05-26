@@ -6,12 +6,19 @@ using System.Threading.Tasks;
 
 namespace Calculator
 {
+    /// <summary>
+    ///  Class which includes expression: two numbers and operation.
+    /// </summary>
     public class Expression
     {
-        private string FirstNumber;
-        private string SecondNumber;
+        public string FirstNumber;
+        public string SecondNumber;
         private char Operation;
 
+        /// <summary>
+        /// Add number.
+        /// </summary>
+        /// <param name="number"></param>
         public void Add(string number)
         {
             if (FirstNumber == null)
@@ -23,17 +30,29 @@ namespace Calculator
             SecondNumber = number;
         }
 
+        /// <summary>
+        /// Add operation.
+        /// </summary>
+        /// <param name="operation"></param>
         public void Add(char operation)
         {
             Operation = operation;
         }
 
+        /// <summary>
+        /// Clear all fields.
+        /// </summary>
         public void Clear()
         {
-            FirstNumber = "0";
+            FirstNumber = null;
             SecondNumber = null;
+            Operation = ' ';
         }
 
+        /// <summary>
+        /// Count expression.
+        /// </summary>
+        /// <returns></returns>
         public string Count()
         {
             if (SecondNumber == null)
