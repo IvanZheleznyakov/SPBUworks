@@ -10,7 +10,9 @@ namespace HashTableClass
     {
         public HashTable(int capacity = 50)
         {
+            usingHashFunc = DefaultHashFunction;
             Capacity = capacity;
+            HashTableArray = new MyLinkedList<string>[Capacity];
             for (int i = 0; i != capacity; ++i)
             {
                 HashTableArray[i] = new MyLinkedList<string>();
@@ -20,6 +22,7 @@ namespace HashTableClass
         public HashTable(UsingHashFunction hashFunc, int capacity = 50)
         {
             Capacity = capacity;
+            HashTableArray = new MyLinkedList<string>[Capacity];
             for (int i = 0; i != capacity; ++i)
             {
                 HashTableArray[i] = new MyLinkedList<string>();
@@ -32,7 +35,7 @@ namespace HashTableClass
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        private static int DefaultHashFunction(string value)
+        private int DefaultHashFunction(string value)
         {
             int result = 0;
             for (int i = 0; i != value.Length; ++i)
@@ -84,8 +87,8 @@ namespace HashTableClass
 
         public delegate int UsingHashFunction(string value);
 
-        public UsingHashFunction usingHashFunc = DefaultHashFunction;
-        public static int Capacity = 50;
-        public MyLinkedList<string>[] HashTableArray = new MyLinkedList<string>[Capacity];
+        private UsingHashFunction usingHashFunc;
+        private int Capacity;
+        public MyLinkedList<string>[] HashTableArray;
     }
 }

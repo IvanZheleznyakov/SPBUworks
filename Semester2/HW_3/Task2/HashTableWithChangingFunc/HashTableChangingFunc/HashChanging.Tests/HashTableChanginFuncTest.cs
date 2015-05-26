@@ -34,5 +34,11 @@ namespace HashChanging.Tests
             hashTable.DeleteElement("deleted");
             Assert.AreEqual(false, hashTable.IsElementInHashTable("deleted"));
         }
+
+        //[TestMethod]
+        //public void ChangeHashFuncTest()
+        //{
+        //    var hashTable = new HashTableClass.HashTable();
+        //}
     }
 }
