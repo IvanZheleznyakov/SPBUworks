@@ -46,12 +46,33 @@ namespace HashTableClass
         }
 
         /// <summary>
+        /// Remove all elements from hashtable to list.
+        /// </summary>
+        private MyLinkedList<string> RemoveElementsToList()
+        {
+            var list = new MyLinkedList<string>();
+            for (int i = 0; i != Capacity; ++i)
+            {
+                while (!HashTableArray[i].IsEmpty())
+                {
+                    list.AddElement(HashTableArray[i].RemoveElement());
+                }
+            }
+            return list;
+        }
+
+        /// <summary>
         /// Change hashfunction.
         /// </summary>
         /// <param name="hashFunc"></param>
         public void ChangeHashFunction(UsingHashFunction hashFunc)
         {
+            var newList = RemoveElementsToList();
             usingHashFunc = hashFunc;
+            while (!newList.IsEmpty())
+            {
+                this.AddElement(newList.RemoveElement());
+            }
         }
 
         /// <summary>
