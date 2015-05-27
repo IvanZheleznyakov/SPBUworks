@@ -45,7 +45,14 @@ namespace HashChanging.Tests
         {
             var hashTable = new HashTableClass.HashTable(50);
             hashTable.AddElement("a");
+            hashTable.AddElement("check");
+            hashTable.AddElement("14");
+            hashTable.AddElement("matan");
             hashTable.ChangeHashFunction(TestFunc);
+            Assert.AreEqual(true, hashTable.IsElementInHashTable("a"));
+            Assert.AreEqual(true, hashTable.IsElementInHashTable("check"));
+            Assert.AreEqual(true, hashTable.IsElementInHashTable("14"));
+            Assert.AreEqual(true, hashTable.IsElementInHashTable("matan"));
         }
     }
 }
