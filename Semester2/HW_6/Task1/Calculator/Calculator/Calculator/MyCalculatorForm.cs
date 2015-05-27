@@ -161,7 +161,6 @@ namespace Calculator
         {
             expression.Add(this.OutputResult.Text);
             expression.Add('+');
-//            this.OutputResult.Text = expression.Count();
             lastClickOnOperation = true;
         }
 
@@ -170,8 +169,6 @@ namespace Calculator
             expression.Add(this.OutputResult.Text);
             this.OutputResult.Text = expression.Count();
             expression.Clear();
-  //          expression.FirstNumber = this.OutputResult.Text;
-  //          expression.SecondNumber = null;
             lastClickOnOperation = true;
         }
 
@@ -179,7 +176,6 @@ namespace Calculator
         {
             expression.Add(this.OutputResult.Text);
             expression.Add('-');
- //           this.OutputResult.Text = expression.Count();
             lastClickOnOperation = true;
         }
 
@@ -187,7 +183,6 @@ namespace Calculator
         {
             expression.Add(this.OutputResult.Text);
             expression.Add('*');
-  //          this.OutputResult.Text = expression.Count();
             lastClickOnOperation = true;
         }
 
@@ -195,13 +190,12 @@ namespace Calculator
         {
             expression.Add(this.OutputResult.Text);
             expression.Add('/');
-  //          this.OutputResult.Text = expression.Count();
             lastClickOnOperation = true;
         }
 
         private void OnButtonPercentClick(object sender, EventArgs e)
         {
-            if (expression.FirstNumber == null)
+            if (expression.IsEmpty())
             {
                 expression.Add(this.OutputResult.Text);
             }

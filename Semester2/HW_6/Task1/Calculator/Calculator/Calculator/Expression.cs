@@ -11,8 +11,8 @@ namespace Calculator
     /// </summary>
     public class Expression
     {
-        public string FirstNumber;
-        public string SecondNumber;
+        private string FirstNumber;
+        private string SecondNumber;
         private char Operation;
 
         /// <summary>
@@ -47,6 +47,14 @@ namespace Calculator
             FirstNumber = null;
             SecondNumber = null;
             Operation = ' ';
+        }
+
+        /// <summary>
+        /// Check if expression is empty.
+        /// </summary>
+        public bool IsEmpty()
+        {
+            return FirstNumber == null;
         }
 
         /// <summary>
