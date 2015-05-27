@@ -18,7 +18,7 @@ namespace UniqueListClass
         /// Add element if it is not in list.
         /// </summary>
         /// <param name="value"></param>
-        public void AddElement(T value)
+        override public void AddElement(T value)
         {
             var newElement = new ListElement()
             {
@@ -55,7 +55,7 @@ namespace UniqueListClass
         /// Remove element from list.
         /// </summary>
         /// <returns></returns>
-        public T RemoveElement()
+        override public T RemoveElement()
         {
             if (head == null)
             {
@@ -84,7 +84,7 @@ namespace UniqueListClass
         /// Delete element with specified value from list.
         /// </summary>
         /// <param name="value"></param>
-        public void DeleteElement(T value)
+        override public void DeleteElement(T value)
         {
             if (head == null)
             {
