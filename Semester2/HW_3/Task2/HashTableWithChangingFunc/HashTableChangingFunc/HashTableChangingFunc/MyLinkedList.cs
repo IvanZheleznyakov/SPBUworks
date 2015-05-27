@@ -166,6 +166,14 @@ namespace HashTableClass
             return false;
         }
 
+        /// <summary>
+        /// Check if list is empty.
+        /// </summary>
+        public bool IsEmpty()
+        {
+            return head == null;
+        }
+
         private ListElement head = null;
     }
 }

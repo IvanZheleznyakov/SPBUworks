@@ -35,10 +35,17 @@ namespace HashChanging.Tests
             Assert.AreEqual(false, hashTable.IsElementInHashTable("deleted"));
         }
 
-        //[TestMethod]
-        //public void ChangeHashFuncTest()
-        //{
-        //    var hashTable = new HashTableClass.HashTable();
-        //}
+        public int TestFunc(string value)
+        {
+            return 1;
+        }
+
+        [TestMethod]
+        public void ChangeHashFuncTest()
+        {
+            var hashTable = new HashTableClass.HashTable(50);
+            hashTable.AddElement("a");
+            hashTable.ChangeHashFunction(TestFunc);
+        }
     }
 }
