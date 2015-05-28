@@ -39,113 +39,15 @@ namespace Calculator
             }
         }
 
-        private void OnButton0Click(object sender, EventArgs e)
+        private void OnButtonNumberClick(object sender, EventArgs e)
         {
+            Button button = sender as Button;
             if (this.OutputResult.Text != "0" && this.OutputResult.Text != "Error" && !lastClickOnOperation)
             {
-                this.OutputResult.Text += "0";
+                this.OutputResult.Text += button.Text;
                 return;
             }
-            this.OutputResult.Text = "0";
-            lastClickOnOperation = false;
-        }
-
-        private void OnButton1Click(object sender, EventArgs e)
-        {
-            if (this.OutputResult.Text != "0" && this.OutputResult.Text != "Error" && !lastClickOnOperation)
-            {
-                this.OutputResult.Text += "1";
-                return;
-            }
-            this.OutputResult.Text = "1";
-            lastClickOnOperation = false;
-        }
-
-        private void OnButton2Click(object sender, EventArgs e)
-        {
-            if (this.OutputResult.Text != "0" && this.OutputResult.Text != "Error" && !lastClickOnOperation)
-            {
-                this.OutputResult.Text += "2";
-                return;
-            }
-            this.OutputResult.Text = "2";
-            lastClickOnOperation = false;
-        }
-
-        private void OnButton3Click(object sender, EventArgs e)
-        {
-            if (this.OutputResult.Text != "0" && this.OutputResult.Text != "Error" && !lastClickOnOperation)
-            {
-                this.OutputResult.Text += "3";
-                return;
-            }
-            this.OutputResult.Text = "3";
-            lastClickOnOperation = false;
-        }
-
-        private void OnButton4Click(object sender, EventArgs e)
-        {
-            if (this.OutputResult.Text != "0" && this.OutputResult.Text != "Error" && !lastClickOnOperation)
-            {
-                this.OutputResult.Text += "4";
-                return;
-            }
-            this.OutputResult.Text = "4";
-            lastClickOnOperation = false;
-        }
-
-        private void OnButton5Click(object sender, EventArgs e)
-        {
-            if (this.OutputResult.Text != "0" && this.OutputResult.Text != "Error" && !lastClickOnOperation)
-            {
-                this.OutputResult.Text += "5";
-                return;
-            }
-            this.OutputResult.Text = "5";
-            lastClickOnOperation = false;
-        }
-
-        private void OnButton6Click(object sender, EventArgs e)
-        {
-            if (this.OutputResult.Text != "0" && this.OutputResult.Text != "Error" && !lastClickOnOperation)
-            {
-                this.OutputResult.Text += "6";
-                return;
-            }
-            this.OutputResult.Text = "6";
-            lastClickOnOperation = false;
-        }
-
-        private void OnButton7Click(object sender, EventArgs e)
-        {
-            if (this.OutputResult.Text != "0" && this.OutputResult.Text != "Error" && !lastClickOnOperation)
-            {
-                this.OutputResult.Text += "7";
-                return;
-            }
-            this.OutputResult.Text = "7";
-            lastClickOnOperation = false;
-        }
-
-        private void OnButton8Click(object sender, EventArgs e)
-        {
-            if (this.OutputResult.Text != "0" && this.OutputResult.Text != "Error" && !lastClickOnOperation)
-            {
-                this.OutputResult.Text += "8";
-                return;
-            }
-            this.OutputResult.Text = "8";
-            lastClickOnOperation = false;
-        }
-
-        private void OnButton9Click(object sender, EventArgs e)
-        {
-            if (this.OutputResult.Text != "0" && this.OutputResult.Text != "Error" && !lastClickOnOperation)
-            {
-                this.OutputResult.Text += "9";
-                return;
-            }
-            this.OutputResult.Text = "9";
+            this.OutputResult.Text = button.Text;
             lastClickOnOperation = false;
         }
 
@@ -157,10 +59,11 @@ namespace Calculator
             }
         }
 
-        private void OnButtonPlusClick(object sender, EventArgs e)
+        private void OnButtonOperationClick(object sender, EventArgs e)
         {
+            Button button = sender as Button;
             expression.Add(this.OutputResult.Text);
-            expression.Add('+');
+            expression.Add(button.Text[0]);
             lastClickOnOperation = true;
         }
 
@@ -169,27 +72,6 @@ namespace Calculator
             expression.Add(this.OutputResult.Text);
             this.OutputResult.Text = expression.Count();
             expression.Clear();
-            lastClickOnOperation = true;
-        }
-
-        private void OnButtonMinusClick(object sender, EventArgs e)
-        {
-            expression.Add(this.OutputResult.Text);
-            expression.Add('-');
-            lastClickOnOperation = true;
-        }
-
-        private void OnButtonMultiplicationClick(object sender, EventArgs e)
-        {
-            expression.Add(this.OutputResult.Text);
-            expression.Add('*');
-            lastClickOnOperation = true;
-        }
-
-        private void OnButtonDivisionClick(object sender, EventArgs e)
-        {
-            expression.Add(this.OutputResult.Text);
-            expression.Add('/');
             lastClickOnOperation = true;
         }
 
