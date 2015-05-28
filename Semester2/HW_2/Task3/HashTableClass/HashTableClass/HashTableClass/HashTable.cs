@@ -65,6 +65,6 @@ namespace HashTableClass
         }
 
         private int Capacity;
-        public MyLinkedList<string>[] HashTableArray;
+        private MyLinkedList<string>[] HashTableArray;
     }
 }
