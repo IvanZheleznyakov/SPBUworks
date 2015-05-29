@@ -205,7 +205,7 @@ namespace ListStackWithEnum
                 {
                     currentElement = currentElement.Next;
                 }
-                return currentElement == null;
+                return currentElement != null;
             }
 
             public void Reset()
