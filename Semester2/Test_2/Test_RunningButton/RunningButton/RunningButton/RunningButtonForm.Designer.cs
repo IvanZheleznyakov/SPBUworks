@@ -36,7 +36,7 @@
             this.RunningButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.RunningButton.Location = new System.Drawing.Point(29, 45);
             this.RunningButton.Name = "RunningButton";
-            this.RunningButton.Size = new System.Drawing.Size(229, 220);
+            this.RunningButton.Size = new System.Drawing.Size(122, 104);
             this.RunningButton.TabIndex = 0;
             this.RunningButton.TabStop = false;
             this.RunningButton.Text = "YOU SHALL NOT CATCH ME";
