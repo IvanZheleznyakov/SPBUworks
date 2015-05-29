@@ -12,6 +12,8 @@ namespace RunningButton
 {
     public partial class RunningButtonForm : Form
     {
+        private Random randomNumber = new Random();
+
         public RunningButtonForm()
         {
             InitializeComponent();
@@ -20,7 +22,6 @@ namespace RunningButton
         private void MouseMoveOnRunningButton(object sender, MouseEventArgs e)
         {
             Button button = sender as Button;
-            var randomNumber = new Random();
             int newX = randomNumber.Next(0, this.ClientSize.Width - button.Width);
             int newY = randomNumber.Next(0, this.ClientSize.Height - button.Height);
             button.Location = new System.Drawing.Point(newX, newY);
