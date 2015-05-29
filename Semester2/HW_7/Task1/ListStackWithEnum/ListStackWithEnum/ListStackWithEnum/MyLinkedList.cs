@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -189,7 +190,7 @@ namespace ListStackWithEnum
             private MyLinkedList<T> list;
             private ListElement currentElement = null;
 
-            private MyLinkedListEnum(MyLinkedList<T> list)
+            public MyLinkedListEnum(MyLinkedList<T> list)
             {
                 this.list = list;
             }

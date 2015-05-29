@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListStackWithEnum", "ListStackWithEnum\ListStackWithEnum.csproj", "{0628A184-A540-4683-8E56-F67148EEEB2D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListStackWithEnum.Tests", "ListStackWithEnum.Tests\ListStackWithEnum.Tests.csproj", "{8320A001-884C-4AE3-8D83-3699CB46B5F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{0628A184-A540-4683-8E56-F67148EEEB2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0628A184-A540-4683-8E56-F67148EEEB2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0628A184-A540-4683-8E56-F67148EEEB2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8320A001-884C-4AE3-8D83-3699CB46B5F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8320A001-884C-4AE3-8D83-3699CB46B5F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8320A001-884C-4AE3-8D83-3699CB46B5F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8320A001-884C-4AE3-8D83-3699CB46B5F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
