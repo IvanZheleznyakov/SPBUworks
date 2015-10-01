@@ -80,37 +80,59 @@ namespace TreeIterator
         {
             private MyBinaryTree<T> tree;
             private TreeElement currentElement = null;
-            private MyStack<TreeElement> stack;
+ //           private MyStack<TreeElement> stack;
+            private MyLinkedList<TreeElement> list;
 
             public MyBinaryTreeEnum(MyBinaryTree<T> tree)
             {
                 this.tree = tree;
             }
 
-            private void MoveElementToStack(TreeElement treeElement)
+            //private void MoveElementToStack(TreeElement treeElement)
+            //{
+            //    stack.Push(treeElement);
+            //    if (treeElement.Left != null)
+            //    {
+            //        MoveElementToStack(treeElement.Left);
+            //    }
+            //    if (treeElement.Right != null)
+            //    {
+            //        MoveElementToStack(treeElement.Right);
+            //    }
+            //}
+
+            private void MoveElementToList(TreeElement treeElement)
             {
-                stack.Push(treeElement);
+                list.AddElement(treeElement);
                 if (treeElement.Left != null)
                 {
-                    MoveElementToStack(treeElement.Left);
+                    MoveElementToList(treeElement.Left);
                 }
                 if (treeElement.Right != null)
                 {
-                    MoveElementToStack(treeElement.Right);
+                    MoveElementToList(treeElement.Right);
                 }
             }
 
             public bool MoveNext()
             {
-                if (stack.IsEmpty())
+                //if (stack.IsEmpty())
+                //{
+                //    currentElement = stack.head;
+                //}
+                //else
+                //{
+                //    currentElement = stack.Pop();
+                //}
+                //return currentElement != null;
+                if (currentElement == null)
                 {
-                    currentElement = tree.head;
+                    currentElement = list.GetValueOfHead();
                 }
                 else
                 {
-                    currentElement = stack.Pop();
+                    currentElement = ;
                 }
-                return currentElement != null;
             }
 
             public void Reset()
