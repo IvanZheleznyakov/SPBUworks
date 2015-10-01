@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TreeIterator
 {
-    public class MyBinaryTree<T>
+    public class MyBinaryTree<T> : IEnumerable<T>
     {
         private class TreeElement
         {
@@ -63,6 +64,52 @@ namespace TreeIterator
                 return;
             }
             head.Right = newElement;
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            return new MyBinaryTreeEnum(this);
+        }
+
+        private class MyBinaryTreeEnum : IEnumerator<T>
+        {
+            private MyBinaryTree<T> tree;
+            private TreeElement currentElement = null;
+
+            public MyBinaryTreeEnum(MyBinaryTree<T> tree)
+            {
+                this.tree = tree;
+            }
+
+            public bool MoveNext()
+            {
+                
+            }
+
+            public void Reset()
+            {
+                currentElement = null;
+            }
+
+            public object Current
+            {
+                get { return currentElement.Value; }
+            }
+
+            T IEnumerator<T>.Current
+            {
+                get { return currentElement.Value; }
+            }
+
+            public void Dispose()
+            {
+
+            }
         }
     }
 }
