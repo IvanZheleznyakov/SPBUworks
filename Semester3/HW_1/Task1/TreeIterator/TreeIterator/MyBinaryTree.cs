@@ -80,15 +80,37 @@ namespace TreeIterator
         {
             private MyBinaryTree<T> tree;
             private TreeElement currentElement = null;
+            private MyStack<TreeElement> stack;
 
             public MyBinaryTreeEnum(MyBinaryTree<T> tree)
             {
                 this.tree = tree;
             }
 
+            private void MoveElementToStack(TreeElement treeElement)
+            {
+                stack.Push(treeElement);
+                if (treeElement.Left != null)
+                {
+                    MoveElementToStack(treeElement.Left);
+                }
+                if (treeElement.Right != null)
+                {
+                    MoveElementToStack(treeElement.Right);
+                }
+            }
+
             public bool MoveNext()
             {
-                
+                if (stack.IsEmpty())
+                {
+                    currentElement = tree.head;
+                }
+                else
+                {
+                    currentElement = stack.Pop();
+                }
+                return currentElement != null;
             }
 
             public void Reset()
