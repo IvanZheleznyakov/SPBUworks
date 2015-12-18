@@ -97,7 +97,10 @@ namespace TreeIterator
             {
                 this.tree = tree;
                 stack = new MyStack<TreeElement>();
-                stack.Push(tree.head);
+                if (tree.head != null)
+                {
+                    stack.Push(tree.head);
+                }
             }
 
             public bool MoveNext()

@@ -21,6 +21,14 @@ namespace TreeIterator.Tests
                 ++numOfElements;
             }
             Assert.AreEqual(5, numOfElements);
+
+            MyBinaryTree<int> secondTree = new MyBinaryTree<int>();
+            numOfElements = 0;
+            foreach (int element in secondTree)
+            {
+                ++numOfElements;
+            }
+            Assert.AreEqual(0, numOfElements);
         }
     }
 }
