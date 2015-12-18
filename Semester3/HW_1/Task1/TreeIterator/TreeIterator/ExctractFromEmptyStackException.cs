@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StackClass
+namespace TreeIterator
 {
     [Serializable]
     public class ExtractFromEmptyStackException : ApplicationException

@@ -52,6 +52,17 @@ namespace TreeIterator
             return head == null;
         }
 
+        /// <summary>
+        /// Clear the stack.
+        /// </summary>
+        public void Clear()
+        {
+            while (!this.IsEmpty())
+            {
+                this.Pop();
+            }
+        }
+
         private StackElement head = null;
     }
 }
