@@ -26,6 +26,7 @@ namespace TreeIterator
                 Value = value
             };
             head = newElement;
+            ++numOfElements;
         }
 
         /// <summary>
@@ -40,6 +41,7 @@ namespace TreeIterator
             }
             var temp = head.Value;
             head = head.Next;
+            --numOfElements;
             return temp;
         }
 
@@ -63,6 +65,15 @@ namespace TreeIterator
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public int Count()
+        {
+            return numOfElements;
+        }
+
+        private int numOfElements = 0;
         private StackElement head = null;
     }
 }
