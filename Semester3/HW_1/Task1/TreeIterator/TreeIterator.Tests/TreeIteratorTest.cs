@@ -30,5 +30,23 @@ namespace TreeIterator.Tests
             }
             Assert.AreEqual(0, numOfElements);
         }
+
+        [TestMethod]
+        public void ElementsInForeachAreRightTest()
+        {
+            MyBinaryTree<int> tree = new MyBinaryTree<int>();
+            MyLinkedList<int> list = new MyLinkedList<int>();
+            tree.AddElement(-10);
+            tree.AddElement(22);
+            tree.AddElement(404);
+            foreach (int element in tree)
+            {
+                list.AddElement(element);
+            }
+
+            Assert.AreEqual(true, list.IsElementInList(22));
+            Assert.AreEqual(true, list.IsElementInList(404));
+            Assert.AreEqual(true, list.IsElementInList(-10));
+        }
     }
 }
