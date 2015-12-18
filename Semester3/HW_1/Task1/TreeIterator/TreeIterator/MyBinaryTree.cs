@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TreeIterator
 {
@@ -81,7 +77,6 @@ namespace TreeIterator
             private MyBinaryTree<T> tree;
             private TreeElement currentElement = null;
             private MyStack<TreeElement> stack;
-//            private MyLinkedList<TreeElement> list;
 
             public MyBinaryTreeEnum(MyBinaryTree<T> tree)
             {
