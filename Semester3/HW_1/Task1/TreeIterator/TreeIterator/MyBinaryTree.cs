@@ -3,8 +3,15 @@ using System.Collections.Generic;
 
 namespace TreeIterator
 {
+    /// <summary>
+    /// Binary Tree Class.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class MyBinaryTree<T> : IEnumerable<T>
     {
+        /// <summary>
+        /// Element that contains in tree.
+        /// </summary>
         private class TreeElement
         {
             public T Value { get; set; }
@@ -14,6 +21,10 @@ namespace TreeIterator
 
         private TreeElement head = null;
 
+        /// <summary>
+        /// Add element to tree.
+        /// </summary>
+        /// <param name="value"></param>
         public void AddElement(T value)
         {
             var newElement = new TreeElement()
@@ -67,6 +78,10 @@ namespace TreeIterator
             return GetEnumerator();
         }
 
+        /// <summary>
+        /// Get enumerator for that tree.
+        /// </summary>
+        /// <returns></returns>
         public IEnumerator<T> GetEnumerator()
         {
             return new MyBinaryTreeEnum(this);
