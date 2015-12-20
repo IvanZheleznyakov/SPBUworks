@@ -6,13 +6,18 @@ using System.Threading.Tasks;
 
 namespace LocalNetwork
 {
+    /// <summary>
+    /// Computer with OS.
+    /// </summary>
     public class Computer
     {
-        public Computer()
+        public Computer(OperatingSystem operatingSystem, bool isInfected)
         {
-
+            this.operatingSystem = operatingSystem;
+            IsInfected = isInfected;
         }
 
-        public string OS { get; set; }
+        public OperatingSystem operatingSystem;
+        public bool IsInfected { get; set; }
     }
 }

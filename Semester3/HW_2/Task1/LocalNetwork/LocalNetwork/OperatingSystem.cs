@@ -11,11 +11,6 @@ namespace LocalNetwork
     /// </summary>
     public abstract class OperatingSystem
     {
-        public void ChangeProbability(double probability)
-        {
-            ProbabilityOfInfection = probability;
-        }
-
         public double ProbabilityOfInfection { get; set; }
     }
 }
