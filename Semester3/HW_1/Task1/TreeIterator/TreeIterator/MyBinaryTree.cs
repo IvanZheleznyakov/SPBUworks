@@ -178,6 +178,40 @@ namespace TreeIterator
             }
         }
 
+        /// <summary>
+        /// Check if element is in tree.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public bool IsInTree(T value)
+        {
+            if (head == null)
+            {
+                return false;
+            }
+
+            TreeElement cursor = head;
+            Comparer<T> comparer = Comparer<T>.Default;
+
+            while (cursor != null)
+            {
+                if (comparer.Compare(value, cursor.Value) < 0)
+                {
+                    cursor = cursor.Left;
+                }
+                else if (comparer.Compare(value, cursor.Value) > 0)
+                {
+                    cursor = cursor.Right;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
