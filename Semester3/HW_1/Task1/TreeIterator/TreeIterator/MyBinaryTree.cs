@@ -45,7 +45,7 @@ namespace TreeIterator
             
             while (currentElement != null)
             {
-                if (comparer.Compare(newElement.Value, currentElement.Value) <= 0)
+                if (comparer.Compare(newElement.Value, currentElement.Value) < 0)
                 {
                     if (currentElement.Left == null)
                     {
@@ -70,7 +70,112 @@ namespace TreeIterator
                 head.Left = newElement;
                 return;
             }
+
             head.Right = newElement;
+        }
+
+        /// <summary>
+        /// Remove element from tree.
+        /// </summary>
+        /// <param name="value"></param>
+        public void RemoveElement(T value)
+        {
+            if (head == null)
+            {
+                return;
+            }
+
+            TreeElement tempElement = head;
+            TreeElement parent = null;
+
+            Comparer<T> comparer = Comparer<T>.Default;
+
+            while (comparer.Compare(tempElement.Value, value) != 0)
+            {
+                if (comparer.Compare(value, tempElement.Value) < 0)
+                {
+                    parent = tempElement;
+                    tempElement = tempElement.Left;
+                }
+                else if (comparer.Compare(value, tempElement.Value) > 0)
+                {
+                    parent = tempElement;
+                    tempElement = tempElement.Right;
+                }
+
+                if (tempElement == null)
+                {
+                    return;
+                }
+            }
+
+            if (tempElement.Right == null)
+            {
+                if (tempElement == head)
+                {
+                    head = tempElement.Left;
+                }
+                else
+                {
+                    if (comparer.Compare(value, parent.Value) < 0)
+                    {
+                        parent.Left = tempElement.Left;
+                    }
+                    else
+                    {
+                        parent.Right = tempElement.Right;
+                    }
+                }
+            }
+            else if (tempElement.Right.Left == null)
+            {
+                tempElement.Right.Left = tempElement.Left;
+                if (tempElement == head)
+                {
+                    head = tempElement.Right;
+                }
+                else
+                {
+                    if (comparer.Compare(value, parent.Value) < 0)
+                    {
+                        parent.Left = tempElement.Right;
+                    }
+                    else
+                    {
+                        parent.Right = tempElement.Right;
+                    }
+                }
+            }
+            else
+            {
+                TreeElement cursor = tempElement.Right.Left;
+                TreeElement prevElement = tempElement.Right;
+                while (cursor.Left != null)
+                {
+                    prevElement = cursor;
+                    cursor = cursor.Left;
+                }
+
+                prevElement.Left = cursor.Right;
+                cursor.Left = tempElement.Left;
+                cursor.Right = tempElement.Right;
+
+                if (tempElement = head)
+                {
+                    head = cursor;
+                }
+                else
+                {
+                    if (comparer.Compare(value, parent.Value) < 0)
+                    {
+                        parent.Left = cursor;
+                    }
+                    else
+                    {
+                        parent.Right = cursor;
+                    }
+                }
+            }
         }
 
         IEnumerator IEnumerable.GetEnumerator()
