@@ -50,7 +50,7 @@ namespace LocalNetwork
         /// <param name="j">Index of second computer.</param>
         public void AddLink(int i, int j)
         {
-            if (i > computers.Count || j > computers.Count)
+            if (i > computers.Count - 1 || j > computers.Count - 1)
             {
                 throw new WrongLinksAddedException();
             }
