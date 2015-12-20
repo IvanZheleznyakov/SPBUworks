@@ -13,7 +13,7 @@ namespace LocalNetwork
     {
         public LinuxOs()
         {
-            ProbabilityOfInfection = 0.4;
+            ProbabilityOfInfection = 0.3;
             OSName = "Linux";
         }
 

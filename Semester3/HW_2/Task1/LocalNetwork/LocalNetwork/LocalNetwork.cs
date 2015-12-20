@@ -25,7 +25,18 @@ namespace LocalNetwork
         {
             computers.Add(newComputer);
             linksBetweenComputers.Add(new List<bool>());
-            linksBetweenComputers[linksBetweenComputers.Capacity].Add(false);
+            for (int i = 0; i != linksBetweenComputers.Count; ++i)
+            {
+                if (i == linksBetweenComputers.Count - 1)
+                {
+                    for (int j = 0; j != linksBetweenComputers.Count - 1; ++j)
+                    {
+                        linksBetweenComputers[j].Add(false);
+                    }
+                }
+                linksBetweenComputers[linksBetweenComputers.Count - 1].Add(false);
+            }
+
             if (newComputer.IsInfected)
             {
                 ++infectedComputers;
@@ -39,7 +50,7 @@ namespace LocalNetwork
         /// <param name="j">Index of second computer.</param>
         public void AddLink(int i, int j)
         {
-            if (i <= computers.Capacity && j <= computers.Capacity)
+            if (i <= computers.Count && j <= computers.Count)
             {
                 linksBetweenComputers[i][j] = true;
                 linksBetweenComputers[j][i] = true;
@@ -51,7 +62,8 @@ namespace LocalNetwork
         /// </summary>
         public void Start()
         {
-            while (infectedComputers != computers.Capacity)
+            ShowState();
+            while (infectedComputers != computers.Count)
             {
                 Step();
             }
@@ -63,11 +75,11 @@ namespace LocalNetwork
         private void Step()
         {
             List<int> willBeInfected = new List<int>();
-            for (int i = 0; i != computers.Capacity; ++i)
+            for (int i = 0; i != computers.Count; ++i)
             {
                 if (!computers[i].IsInfected)
                 {
-                    for (int j = 0; j != computers.Capacity; ++j)
+                    for (int j = 0; j != computers.Count; ++j)
                     {
                         if (linksBetweenComputers[i][j] && computers[j].IsInfected)
                         {
@@ -81,11 +93,13 @@ namespace LocalNetwork
                 }
             }
 
-            for (int i = 0; i != willBeInfected.Capacity; ++i)
+            for (int i = 0; i != willBeInfected.Count; ++i)
             {
                 computers[willBeInfected[i]].IsInfected = true;
                 ++infectedComputers;
             }
+
+            ShowState();
         }
 
         /// <summary>
@@ -93,14 +107,14 @@ namespace LocalNetwork
         /// </summary>
         private void ShowState()
         {
-            for (int i = 0; i != computers.Capacity; ++i)
+            for (int i = 0; i != computers.Count; ++i)
             {
                 string state = i.ToString() + " computer with " + computers[i].operatingSystem.OSName +" is";
                 if (!computers[i].IsInfected)
                 {
-                    state += " not ";
+                    state += " not";
                 }
-                state += "infected";
+                state += " infected";
                 Console.WriteLine(state);
             }
             Console.WriteLine();

@@ -13,7 +13,7 @@ namespace LocalNetwork
     {
         public MacOs()
         {
-            ProbabilityOfInfection = 0.5;
+            ProbabilityOfInfection = 0.4;
             OSName = "Mac";
         }
     }
