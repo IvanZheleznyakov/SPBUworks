@@ -160,7 +160,7 @@ namespace TreeIterator
                 cursor.Left = tempElement.Left;
                 cursor.Right = tempElement.Right;
 
-                if (tempElement = head)
+                if (tempElement == head)
                 {
                     head = cursor;
                 }
