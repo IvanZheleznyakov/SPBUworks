@@ -14,6 +14,7 @@ namespace LocalNetwork
         public WindowsOs()
         {
             ProbabilityOfInfection = 0.7;
+            OSName = "Windows";
         }
     }
 }

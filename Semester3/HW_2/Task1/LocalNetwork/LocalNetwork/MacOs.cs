@@ -14,6 +14,7 @@ namespace LocalNetwork
         public MacOs()
         {
             ProbabilityOfInfection = 0.5;
+            OSName = "Mac";
         }
     }
 }

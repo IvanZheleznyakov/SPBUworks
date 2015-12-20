@@ -12,5 +12,6 @@ namespace LocalNetwork
     public abstract class OperatingSystem
     {
         public double ProbabilityOfInfection { get; set; }
+        public string OSName { get; protected set; }
     }
 }

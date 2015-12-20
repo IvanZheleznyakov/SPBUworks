@@ -26,6 +26,10 @@ namespace LocalNetwork
             computers.Add(newComputer);
             linksBetweenComputers.Add(new List<bool>());
             linksBetweenComputers[linksBetweenComputers.Capacity].Add(false);
+            if (newComputer.IsInfected)
+            {
+                ++infectedComputers;
+            }
         }
 
         /// <summary>
@@ -38,10 +42,72 @@ namespace LocalNetwork
             if (i <= computers.Capacity && j <= computers.Capacity)
             {
                 linksBetweenComputers[i][j] = true;
+                linksBetweenComputers[j][i] = true;
             }
+        }
+
+        /// <summary>
+        /// Start work.
+        /// </summary>
+        public void Start()
+        {
+            while (infectedComputers != computers.Capacity)
+            {
+                Step();
+            }
+        }
+
+        /// <summary>
+        /// Step of infection algorithm.
+        /// </summary>
+        private void Step()
+        {
+            List<int> willBeInfected = new List<int>();
+            for (int i = 0; i != computers.Capacity; ++i)
+            {
+                if (!computers[i].IsInfected)
+                {
+                    for (int j = 0; j != computers.Capacity; ++j)
+                    {
+                        if (linksBetweenComputers[i][j] && computers[j].IsInfected)
+                        {
+                            if (RandomSingleton.GetInstance().NextDouble() <= computers[i].operatingSystem.ProbabilityOfInfection)
+                            {
+                                willBeInfected.Add(i);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            for (int i = 0; i != willBeInfected.Capacity; ++i)
+            {
+                computers[willBeInfected[i]].IsInfected = true;
+                ++infectedComputers;
+            }
+        }
+
+        /// <summary>
+        /// Show state of network.
+        /// </summary>
+        private void ShowState()
+        {
+            for (int i = 0; i != computers.Capacity; ++i)
+            {
+                string state = i.ToString() + " computer with " + computers[i].operatingSystem.OSName +" is";
+                if (!computers[i].IsInfected)
+                {
+                    state += " not ";
+                }
+                state += "infected";
+                Console.WriteLine(state);
+            }
+            Console.WriteLine();
         }
 
         private List<Computer> computers;
         private List<List<bool>> linksBetweenComputers;
+        private int infectedComputers = 0;
     }
 }
