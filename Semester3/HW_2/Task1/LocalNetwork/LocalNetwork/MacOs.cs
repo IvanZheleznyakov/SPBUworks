@@ -11,9 +11,9 @@ namespace LocalNetwork
     /// </summary>
     public class MacOs : OperatingSystem
     {
-        public MacOs()
+        public MacOs(double probability = 0.4)
         {
-            ProbabilityOfInfection = 0.4;
+            ProbabilityOfInfection = probability;
             OSName = "Mac";
         }
     }

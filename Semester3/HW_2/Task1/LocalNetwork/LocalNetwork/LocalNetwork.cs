@@ -15,6 +15,7 @@ namespace LocalNetwork
         {
             computers = new List<Computer>();
             linksBetweenComputers = new List<List<bool>>();
+            IsWorking = false;
         }
 
         /// <summary>
@@ -23,6 +24,11 @@ namespace LocalNetwork
         /// <param name="newComputer"></param>
         public void AddComputer(Computer newComputer)
         {
+            if (IsWorking)
+            {
+                throw new AddInfoDuringWorking();
+            }
+
             computers.Add(newComputer);
             linksBetweenComputers.Add(new List<bool>());
             for (int i = 0; i != linksBetweenComputers.Count; ++i)
@@ -39,7 +45,7 @@ namespace LocalNetwork
 
             if (newComputer.IsInfected)
             {
-                ++infectedComputers;
+                ++InfectedComputers;
             }
         }
 
@@ -50,6 +56,11 @@ namespace LocalNetwork
         /// <param name="j">Index of second computer.</param>
         public void AddLink(int i, int j)
         {
+            if (IsWorking)
+            {
+                throw new AddInfoDuringWorking();
+            }
+
             if (i > computers.Count - 1 || j > computers.Count - 1)
             {
                 throw new WrongLinksAddedException();
@@ -60,12 +71,12 @@ namespace LocalNetwork
         }
 
         /// <summary>
-        /// Start work.
+        /// Start auto-working.
         /// </summary>
         public void Start()
         {
             ShowState();
-            while (infectedComputers != computers.Count)
+            while (InfectedComputers != computers.Count)
             {
                 Step();
             }
@@ -74,8 +85,9 @@ namespace LocalNetwork
         /// <summary>
         /// Step of infection algorithm.
         /// </summary>
-        private void Step()
+        public void Step()
         {
+            IsWorking = true;
             List<int> willBeInfected = new List<int>();
             for (int i = 0; i != computers.Count; ++i)
             {
@@ -98,7 +110,12 @@ namespace LocalNetwork
             for (int i = 0; i != willBeInfected.Count; ++i)
             {
                 computers[willBeInfected[i]].IsInfected = true;
-                ++infectedComputers;
+                ++InfectedComputers;
+            }
+
+            if (InfectedComputers == computers.Count)
+            {
+                IsWorking = false;
             }
 
             ShowState();
@@ -124,6 +141,7 @@ namespace LocalNetwork
 
         private List<Computer> computers;
         private List<List<bool>> linksBetweenComputers;
-        private int infectedComputers = 0;
+        public int InfectedComputers { get; private set; }
+        public bool IsWorking { get; private set; }
     }
 }

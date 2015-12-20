@@ -11,7 +11,7 @@ namespace LocalNetwork
     /// </summary>
     public abstract class OperatingSystem
     {
-        public double ProbabilityOfInfection { get; set; }
+        public double ProbabilityOfInfection { get; protected set; }
         public string OSName { get; protected set; }
     }
 }

@@ -11,9 +11,9 @@ namespace LocalNetwork
     /// </summary>
     public class WindowsOs : OperatingSystem
     {
-        public WindowsOs()
+        public WindowsOs(double probability = 0.6)
         {
-            ProbabilityOfInfection = 0.6;
+            ProbabilityOfInfection = probability;
             OSName = "Windows";
         }
     }

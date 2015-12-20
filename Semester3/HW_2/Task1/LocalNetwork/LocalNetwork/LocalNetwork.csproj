@@ -45,6 +45,7 @@
     <Compile Include="LinuxOs.cs" />
     <Compile Include="LocalNetwork.cs" />
     <Compile Include="MacOs.cs" />
+    <Compile Include="AddInfoDuringWorking.cs" />
     <Compile Include="OperatingSystem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

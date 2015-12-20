@@ -11,9 +11,9 @@ namespace LocalNetwork
     /// </summary>
     public class LinuxOs : OperatingSystem
     {
-        public LinuxOs()
+        public LinuxOs(double probability = 0.3)
         {
-            ProbabilityOfInfection = 0.3;
+            ProbabilityOfInfection = probability;
             OSName = "Linux";
         }
 
