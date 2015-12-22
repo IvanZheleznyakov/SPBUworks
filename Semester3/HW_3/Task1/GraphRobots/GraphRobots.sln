@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphRobots", "GraphRobots\GraphRobots.csproj", "{ADC141B4-41B4-46FA-87D0-1E2A25DC5499}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphRobots.Tests", "GraphRobots.Tests\GraphRobots.Tests.csproj", "{6C3389D5-6BED-4AFE-B3B3-3C15C3BD63BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ADC141B4-41B4-46FA-87D0-1E2A25DC5499}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADC141B4-41B4-46FA-87D0-1E2A25DC5499}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADC141B4-41B4-46FA-87D0-1E2A25DC5499}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADC141B4-41B4-46FA-87D0-1E2A25DC5499}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C3389D5-6BED-4AFE-B3B3-3C15C3BD63BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C3389D5-6BED-4AFE-B3B3-3C15C3BD63BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C3389D5-6BED-4AFE-B3B3-3C15C3BD63BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C3389D5-6BED-4AFE-B3B3-3C15C3BD63BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
