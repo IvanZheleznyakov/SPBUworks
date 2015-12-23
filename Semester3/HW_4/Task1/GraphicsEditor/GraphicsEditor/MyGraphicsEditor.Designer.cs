@@ -153,6 +153,7 @@
             this.undoButton.TabIndex = 3;
             this.undoButton.Text = "Undo";
             this.undoButton.UseVisualStyleBackColor = true;
+            this.undoButton.Click += new System.EventHandler(this.ClickOnButton);
             // 
             // redoButton
             // 
@@ -166,6 +167,7 @@
             this.redoButton.TabIndex = 4;
             this.redoButton.Text = "Redo";
             this.redoButton.UseVisualStyleBackColor = true;
+            this.redoButton.Click += new System.EventHandler(this.ClickOnButton);
             // 
             // MyGraphicsEditor
             // 

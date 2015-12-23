@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MyGraphic.cs" />
+    <Compile Include="History.cs" />
     <Compile Include="MyGraphicsEditor.cs">
       <SubType>Form</SubType>
     </Compile>

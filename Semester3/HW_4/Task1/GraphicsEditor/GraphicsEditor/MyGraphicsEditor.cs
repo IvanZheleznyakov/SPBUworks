@@ -12,7 +12,7 @@ namespace GraphicsEditor
 {
     public partial class MyGraphicsEditor : Form
     {
-        private List<Line> lines = new List<Line>();
+        private MyGraphic myGraphic = new MyGraphic();
         private bool isPressed = false;
         private bool isDrawing = false;
         private bool isMoving = false;
@@ -36,27 +36,9 @@ namespace GraphicsEditor
 
             if (isMoving)
             {
-                const float eps = 3F;
-                foreach (var line in lines)
+                if (myGraphic.IsEndCatched(ref X, ref Y))
                 {
-                    double length1 = Math.Sqrt(Math.Pow(X - line.StartPoint.X, 2) + Math.Pow(Y - line.StartPoint.Y, 2));
-                    double length2 = Math.Sqrt(Math.Pow(X - line.EndPoint.X, 2) + Math.Pow(Y - line.EndPoint.Y, 2));
-                    if (length1 < eps)
-                    {
-                        isEndCatched = true;
-                        X = line.EndPoint.X;
-                        Y = line.EndPoint.Y;
-                        lines.Remove(line);
-                        return;
-                    }
-                    else if (length2 < eps)
-                    {
-                        isEndCatched = true;
-                        X = line.StartPoint.X;
-                        Y = line.StartPoint.Y;
-                        lines.Remove(line);
-                        return;
-                    }
+                    isEndCatched = true;
                 }
             }
         }
@@ -85,34 +67,20 @@ namespace GraphicsEditor
 
         private void MouseUpFromPictureBox(object sender, MouseEventArgs e)
         {
+            isPressed = false;
             if (isDrawing || (isMoving && isEndCatched))
             {
-                isPressed = false;
                 isEndCatched = false;
                 PointF newStartPoint = new PointF(X, Y);
                 PointF newEndPoint = new PointF(X1, Y1);
-                Line newLine = new Line(newStartPoint, newEndPoint);
-                lines.Add(newLine);
+                myGraphic.AddNewLine(newStartPoint, newEndPoint);
             }
             else if (isDeleting)
             {
-                const float eps = 0.25F;
-                isPressed = false;
-                foreach (var line in lines)
+                if (myGraphic.IsLineDeleted(X, Y))
                 {
-                    double lengthToStart = Math.Sqrt(Math.Pow(line.StartPoint.X - X, 2) + Math.Pow(line.StartPoint.Y - Y, 2));
-                    double lengthToEnd = Math.Sqrt(Math.Pow(line.EndPoint.X - X, 2) + Math.Pow(line.EndPoint.Y - Y, 2));
-                    if (Math.Abs(line.Length() - lengthToStart - lengthToEnd) < eps)
-                    {
-                        lines.Remove(line);
-                        pictureBox.Invalidate();
-                        return;
-                    }
+                    pictureBox.Invalidate();
                 }
-            }
-            else if (isMoving)
-            {
-                isPressed = false;
             }
         }
 
@@ -122,13 +90,10 @@ namespace GraphicsEditor
 
             if (isDrawing || (isMoving && isEndCatched))
             {
-                e.Graphics.DrawLine(pen, new PointF(X, Y), new PointF(X1, Y1));
+                myGraphic.DrawNewLine(ref e, new PointF(X, Y), new PointF(X1, Y1));
             }
 
-            foreach (var line in lines)
-            {
-                e.Graphics.DrawLine(pen, line.StartPoint, line.EndPoint);
-            }
+            myGraphic.ReDrawAllLines(ref e);
         }
 
         private void ClickOnButton(object sender, EventArgs e)
@@ -159,6 +124,16 @@ namespace GraphicsEditor
                 drawButton.BackColor = SystemColors.Control;
                 moveButton.BackColor = SystemColors.Control;
                 deleteButton.BackColor = Color.Gray;
+            }
+            else if (sender.Equals(undoButton))
+            {
+                myGraphic.Undo();
+                pictureBox.Invalidate();
+            }
+            else if (sender.Equals(redoButton))
+            {
+                myGraphic.Redo();
+                pictureBox.Invalidate();
             }
         }
     }
