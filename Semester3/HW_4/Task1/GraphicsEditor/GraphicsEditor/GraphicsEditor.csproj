@@ -52,7 +52,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TwoPoint.cs" />
+    <Compile Include="Line.cs" />
     <EmbeddedResource Include="MyGraphicsEditor.resx">
       <DependentUpon>MyGraphicsEditor.cs</DependentUpon>
     </EmbeddedResource>

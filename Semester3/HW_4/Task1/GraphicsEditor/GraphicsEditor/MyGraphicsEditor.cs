@@ -12,11 +12,11 @@ namespace GraphicsEditor
 {
     public partial class MyGraphicsEditor : Form
     {
-        private List<TwoPoint> twoPoint = new List<TwoPoint>();
+        private List<Line> lines = new List<Line>();
         private bool isPressed = false;
         private bool isDrawing = false;
-        private bool isMoved = false;
-        private bool isDeleted = false;
+        private bool isMoving = false;
+        private bool isDeleting = false;
         private bool isEndCatched = false;
         private float X = 0;
         private float Y = 0;
@@ -34,35 +34,27 @@ namespace GraphicsEditor
             X = e.X;
             Y = e.Y;
 
-            if (isDrawing)
+            if (isMoving)
             {
-
-            }
-            else if (isDeleted)
-            {
-
-            }
-            else if (isMoved)
-            {
-                float eps = 3F;
-                foreach (var p in twoPoint)
+                const float eps = 3F;
+                foreach (var p in lines)
                 {
-                    double length1 = Math.Sqrt(Math.Pow(X - p.X.X, 2) + Math.Pow(Y - p.X.Y, 2));
-                    double length2 = Math.Sqrt(Math.Pow(X - p.Y.X, 2) + Math.Pow(Y - p.Y.Y, 2));
+                    double length1 = Math.Sqrt(Math.Pow(X - p.StartPoint.X, 2) + Math.Pow(Y - p.StartPoint.Y, 2));
+                    double length2 = Math.Sqrt(Math.Pow(X - p.EndPoint.X, 2) + Math.Pow(Y - p.EndPoint.Y, 2));
                     if (length1 < eps)
                     {
                         isEndCatched = true;
-                        X = p.Y.X;
-                        Y = p.Y.Y;
-                        twoPoint.Remove(p);
+                        X = p.EndPoint.X;
+                        Y = p.EndPoint.Y;
+                        lines.Remove(p);
                         return;
                     }
                     else if (length2 < eps)
                     {
                         isEndCatched = true;
-                        X = p.X.X;
-                        Y = p.X.Y;
-                        twoPoint.Remove(p);
+                        X = p.StartPoint.X;
+                        Y = p.StartPoint.Y;
+                        lines.Remove(p);
                         return;
                     }
                 }
@@ -80,7 +72,7 @@ namespace GraphicsEditor
                     pictureBox1.Invalidate();
                 }
             }
-            else if (isMoved)
+            else if (isMoving)
             {
                 if (isPressed && isEndCatched)
                 {
@@ -93,36 +85,33 @@ namespace GraphicsEditor
 
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
-            if (isDrawing || (isMoved && isEndCatched))
+            if (isDrawing || (isMoving && isEndCatched))
             {
                 isPressed = false;
                 isEndCatched = false;
                 PointF newP1 = new PointF(X, Y);
                 PointF newP2 = new PointF(X1, Y1);
-                TwoPoint newLine = new TwoPoint(newP1, newP2);
-                twoPoint.Add(newLine);
+                Line newLine = new Line(newP1, newP2);
+                lines.Add(newLine);
             }
-            else if (isDeleted)
+            else if (isDeleting)
             {
                 const float eps = 0.25F;
                 isPressed = false;
-                foreach (var p in twoPoint)
+                foreach (var p in lines)
                 {
-//                    int m = (p.X.Y - p.Y.Y) * curPoint.X + (p.Y.X - p.X.X) * curPoint.Y + (p.X.X * p.Y.Y - p.Y.X * p.X.Y);
-//                    if (m == 0 && curPoint.X >= Math.Min(p.X.X, p.Y.X) && curPoint.X <= Math.Max(p.X.X, p.Y.X))
-//                    if (Math.Abs(((Y - p.X.Y) / (p.Y.Y - p.X.Y)) - ((X - p.X.X) / (p.Y.X - p.X.X))) < eps)
-                    double length1 = Math.Sqrt(Math.Pow(p.X.X - p.Y.X, 2) + Math.Pow(p.X.Y - p.Y.Y, 2));
-                    double length2 = Math.Sqrt(Math.Pow(p.X.X - X, 2) + Math.Pow(p.X.Y - Y, 2));
-                    double length3 = Math.Sqrt(Math.Pow(p.Y.X - X, 2) + Math.Pow(p.Y.Y - Y, 2));
+                    double length1 = Math.Sqrt(Math.Pow(p.StartPoint.X - p.EndPoint.X, 2) + Math.Pow(p.StartPoint.Y - p.EndPoint.Y, 2));
+                    double length2 = Math.Sqrt(Math.Pow(p.StartPoint.X - X, 2) + Math.Pow(p.StartPoint.Y - Y, 2));
+                    double length3 = Math.Sqrt(Math.Pow(p.EndPoint.X - X, 2) + Math.Pow(p.EndPoint.Y - Y, 2));
                     if (Math.Abs(length1 - length2 - length3) < eps)
                     {
-                        twoPoint.Remove(p);
+                        lines.Remove(p);
                         pictureBox1.Invalidate();
                         return;
                     }
                 }
             }
-            else if (isMoved)
+            else if (isMoving)
             {
                 isPressed = false;
             }
@@ -132,45 +121,45 @@ namespace GraphicsEditor
         {
             Pen pen = new Pen(Color.Black);
 
-            if (isDrawing || (isMoved && isEndCatched))
+            if (isDrawing || (isMoving && isEndCatched))
             {
                 e.Graphics.DrawLine(pen, new PointF(X, Y), new PointF(X1, Y1));
             }
 
-            foreach (var p in twoPoint)
+            foreach (var p in lines)
             {
-                e.Graphics.DrawLine(pen, p.X, p.Y);
+                e.Graphics.DrawLine(pen, p.StartPoint, p.EndPoint);
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (sender.Equals(button1))
+            if (sender.Equals(drawButton))
             {
                 isDrawing = true;
-                isMoved = false;
-                isDeleted = false;
-                button1.BackColor = Color.Gray;
-                button2.BackColor = SystemColors.Control;
-                button3.BackColor = SystemColors.Control;
+                isMoving = false;
+                isDeleting = false;
+                drawButton.BackColor = Color.Gray;
+                moveButton.BackColor = SystemColors.Control;
+                deleteButton.BackColor = SystemColors.Control;
             }
-            else if (sender.Equals(button2))
+            else if (sender.Equals(moveButton))
             {
                 isDrawing = false;
-                isMoved = true;
-                isDeleted = false;
-                button1.BackColor = SystemColors.Control;
-                button2.BackColor = Color.Gray;
-                button3.BackColor = SystemColors.Control;
+                isMoving = true;
+                isDeleting = false;
+                drawButton.BackColor = SystemColors.Control;
+                moveButton.BackColor = Color.Gray;
+                deleteButton.BackColor = SystemColors.Control;
             } 
-            else if (sender.Equals(button3))
+            else if (sender.Equals(deleteButton))
             {
                 isDrawing = false;
-                isMoved = false;
-                isDeleted = true;
-                button1.BackColor = SystemColors.Control;
-                button2.BackColor = SystemColors.Control;
-                button3.BackColor = Color.Gray;
+                isMoving = false;
+                isDeleting = true;
+                drawButton.BackColor = SystemColors.Control;
+                moveButton.BackColor = SystemColors.Control;
+                deleteButton.BackColor = Color.Gray;
             }
         }
     }
