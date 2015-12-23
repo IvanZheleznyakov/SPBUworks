@@ -17,5 +17,10 @@ namespace GraphicsEditor
             StartPoint = x;
             EndPoint = y;
         }
+
+        public double Length()
+        {
+            return Math.Abs(Math.Pow(StartPoint.X - EndPoint.X, 2) + Math.Pow(StartPoint.Y - EndPoint.Y, 2));
+        }
     }
 }

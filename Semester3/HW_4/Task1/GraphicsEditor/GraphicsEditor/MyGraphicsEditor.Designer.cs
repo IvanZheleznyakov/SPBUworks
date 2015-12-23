@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.mainTableLayout = new System.Windows.Forms.TableLayoutPanel();
             this.buttonsTableLayout = new System.Windows.Forms.TableLayoutPanel();
             this.drawButton = new System.Windows.Forms.Button();
@@ -36,26 +36,26 @@
             this.deleteButton = new System.Windows.Forms.Button();
             this.undoButton = new System.Windows.Forms.Button();
             this.redoButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.mainTableLayout.SuspendLayout();
             this.buttonsTableLayout.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pictureBox
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 67);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(410, 205);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
-            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
-            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
-            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
+            this.pictureBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pictureBox.Location = new System.Drawing.Point(3, 67);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(410, 205);
+            this.pictureBox.TabIndex = 0;
+            this.pictureBox.TabStop = false;
+            this.pictureBox.Paint += new System.Windows.Forms.PaintEventHandler(this.PaintOnPictureBox);
+            this.pictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDownOnPictureBox);
+            this.pictureBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MouseMoveOnPictureBox);
+            this.pictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MouseUpFromPictureBox);
             // 
             // mainTableLayout
             // 
@@ -65,7 +65,7 @@
             this.mainTableLayout.AutoSize = true;
             this.mainTableLayout.ColumnCount = 1;
             this.mainTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.mainTableLayout.Controls.Add(this.pictureBox1, 0, 1);
+            this.mainTableLayout.Controls.Add(this.pictureBox, 0, 1);
             this.mainTableLayout.Controls.Add(this.buttonsTableLayout, 0, 0);
             this.mainTableLayout.Location = new System.Drawing.Point(12, 12);
             this.mainTableLayout.Name = "mainTableLayout";
@@ -111,7 +111,7 @@
             this.drawButton.TabIndex = 0;
             this.drawButton.Text = "Draw";
             this.drawButton.UseVisualStyleBackColor = true;
-            this.drawButton.Click += new System.EventHandler(this.button1_Click);
+            this.drawButton.Click += new System.EventHandler(this.ClickOnButton);
             // 
             // moveButton
             // 
@@ -125,7 +125,7 @@
             this.moveButton.TabIndex = 1;
             this.moveButton.Text = "Move";
             this.moveButton.UseVisualStyleBackColor = true;
-            this.moveButton.Click += new System.EventHandler(this.button1_Click);
+            this.moveButton.Click += new System.EventHandler(this.ClickOnButton);
             // 
             // deleteButton
             // 
@@ -139,7 +139,7 @@
             this.deleteButton.TabIndex = 2;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
-            this.deleteButton.Click += new System.EventHandler(this.button1_Click);
+            this.deleteButton.Click += new System.EventHandler(this.ClickOnButton);
             // 
             // undoButton
             // 
@@ -176,7 +176,7 @@
             this.MinimumSize = new System.Drawing.Size(450, 330);
             this.Name = "MyGraphicsEditor";
             this.Text = "MyGraphicsEditor";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.mainTableLayout.ResumeLayout(false);
             this.mainTableLayout.PerformLayout();
             this.buttonsTableLayout.ResumeLayout(false);
@@ -188,7 +188,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.TableLayoutPanel mainTableLayout;
         private System.Windows.Forms.TableLayoutPanel buttonsTableLayout;
         private System.Windows.Forms.Button drawButton;

@@ -28,7 +28,7 @@ namespace GraphicsEditor
             InitializeComponent();
         }
 
-        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        private void MouseDownOnPictureBox(object sender, MouseEventArgs e)
         {
             isPressed = true;
             X = e.X;
@@ -37,31 +37,31 @@ namespace GraphicsEditor
             if (isMoving)
             {
                 const float eps = 3F;
-                foreach (var p in lines)
+                foreach (var line in lines)
                 {
-                    double length1 = Math.Sqrt(Math.Pow(X - p.StartPoint.X, 2) + Math.Pow(Y - p.StartPoint.Y, 2));
-                    double length2 = Math.Sqrt(Math.Pow(X - p.EndPoint.X, 2) + Math.Pow(Y - p.EndPoint.Y, 2));
+                    double length1 = Math.Sqrt(Math.Pow(X - line.StartPoint.X, 2) + Math.Pow(Y - line.StartPoint.Y, 2));
+                    double length2 = Math.Sqrt(Math.Pow(X - line.EndPoint.X, 2) + Math.Pow(Y - line.EndPoint.Y, 2));
                     if (length1 < eps)
                     {
                         isEndCatched = true;
-                        X = p.EndPoint.X;
-                        Y = p.EndPoint.Y;
-                        lines.Remove(p);
+                        X = line.EndPoint.X;
+                        Y = line.EndPoint.Y;
+                        lines.Remove(line);
                         return;
                     }
                     else if (length2 < eps)
                     {
                         isEndCatched = true;
-                        X = p.StartPoint.X;
-                        Y = p.StartPoint.Y;
-                        lines.Remove(p);
+                        X = line.StartPoint.X;
+                        Y = line.StartPoint.Y;
+                        lines.Remove(line);
                         return;
                     }
                 }
             }
         }
 
-        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        private void MouseMoveOnPictureBox(object sender, MouseEventArgs e)
         {
             if (isDrawing)
             {
@@ -69,7 +69,7 @@ namespace GraphicsEditor
                 {
                     X1 = e.X;
                     Y1 = e.Y;
-                    pictureBox1.Invalidate();
+                    pictureBox.Invalidate();
                 }
             }
             else if (isMoving)
@@ -78,35 +78,34 @@ namespace GraphicsEditor
                 {
                     X1 = e.X;
                     Y1 = e.Y;
-                    pictureBox1.Invalidate();
+                    pictureBox.Invalidate();
                 }
             }
         }
 
-        private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
+        private void MouseUpFromPictureBox(object sender, MouseEventArgs e)
         {
             if (isDrawing || (isMoving && isEndCatched))
             {
                 isPressed = false;
                 isEndCatched = false;
-                PointF newP1 = new PointF(X, Y);
-                PointF newP2 = new PointF(X1, Y1);
-                Line newLine = new Line(newP1, newP2);
+                PointF newStartPoint = new PointF(X, Y);
+                PointF newEndPoint = new PointF(X1, Y1);
+                Line newLine = new Line(newStartPoint, newEndPoint);
                 lines.Add(newLine);
             }
             else if (isDeleting)
             {
                 const float eps = 0.25F;
                 isPressed = false;
-                foreach (var p in lines)
+                foreach (var line in lines)
                 {
-                    double length1 = Math.Sqrt(Math.Pow(p.StartPoint.X - p.EndPoint.X, 2) + Math.Pow(p.StartPoint.Y - p.EndPoint.Y, 2));
-                    double length2 = Math.Sqrt(Math.Pow(p.StartPoint.X - X, 2) + Math.Pow(p.StartPoint.Y - Y, 2));
-                    double length3 = Math.Sqrt(Math.Pow(p.EndPoint.X - X, 2) + Math.Pow(p.EndPoint.Y - Y, 2));
-                    if (Math.Abs(length1 - length2 - length3) < eps)
+                    double lengthToStart = Math.Sqrt(Math.Pow(line.StartPoint.X - X, 2) + Math.Pow(line.StartPoint.Y - Y, 2));
+                    double lengthToEnd = Math.Sqrt(Math.Pow(line.EndPoint.X - X, 2) + Math.Pow(line.EndPoint.Y - Y, 2));
+                    if (Math.Abs(line.Length() - lengthToStart - lengthToEnd) < eps)
                     {
-                        lines.Remove(p);
-                        pictureBox1.Invalidate();
+                        lines.Remove(line);
+                        pictureBox.Invalidate();
                         return;
                     }
                 }
@@ -117,7 +116,7 @@ namespace GraphicsEditor
             }
         }
 
-        private void pictureBox1_Paint(object sender, PaintEventArgs e)
+        private void PaintOnPictureBox(object sender, PaintEventArgs e)
         {
             Pen pen = new Pen(Color.Black);
 
@@ -126,13 +125,13 @@ namespace GraphicsEditor
                 e.Graphics.DrawLine(pen, new PointF(X, Y), new PointF(X1, Y1));
             }
 
-            foreach (var p in lines)
+            foreach (var line in lines)
             {
-                e.Graphics.DrawLine(pen, p.StartPoint, p.EndPoint);
+                e.Graphics.DrawLine(pen, line.StartPoint, line.EndPoint);
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ClickOnButton(object sender, EventArgs e)
         {
             if (sender.Equals(drawButton))
             {
