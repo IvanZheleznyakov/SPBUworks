@@ -86,8 +86,6 @@ namespace GraphicsEditor
 
         private void PaintOnPictureBox(object sender, PaintEventArgs e)
         {
-            Pen pen = new Pen(Color.Black);
-
             if (isDrawing || (isMoving && isEndCatched))
             {
                 myGraphic.DrawNewLine(ref e, new PointF(X, Y), new PointF(X1, Y1));
@@ -127,11 +125,23 @@ namespace GraphicsEditor
             }
             else if (sender.Equals(undoButton))
             {
+                isDrawing = false;
+                isMoving = false;
+                isDeleting = false;
+                drawButton.BackColor = SystemColors.Control;
+                moveButton.BackColor = SystemColors.Control;
+                deleteButton.BackColor = SystemColors.Control;
                 myGraphic.Undo();
                 pictureBox.Invalidate();
             }
             else if (sender.Equals(redoButton))
             {
+                isDrawing = false;
+                isMoving = false;
+                isDeleting = false;
+                drawButton.BackColor = SystemColors.Control;
+                moveButton.BackColor = SystemColors.Control;
+                deleteButton.BackColor = SystemColors.Control; 
                 myGraphic.Redo();
                 pictureBox.Invalidate();
             }

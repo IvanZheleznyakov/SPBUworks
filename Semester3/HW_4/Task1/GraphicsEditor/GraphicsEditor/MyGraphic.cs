@@ -13,12 +13,19 @@ namespace GraphicsEditor
         private List<Line> lines = new List<Line>();
         private Pen pen = new Pen(Color.Black);
         private History history = new History();
+
+        public MyGraphic()
+        {
+            history.AddList(new List<Line>());
+        }
         
         public void AddNewLine(PointF newStartPoint, PointF newEndPoint)
         {
             Line newLine = new Line(newStartPoint, newEndPoint);
             lines.Add(newLine);
-            history.AddList(lines);
+            List<Line> linesToHistory = new List<Line>();
+            CopyList<Line>.Copy(lines, ref linesToHistory);
+            history.AddList(linesToHistory);
         }
 
         public bool IsEndCatched(ref float X, ref float Y)
@@ -57,7 +64,9 @@ namespace GraphicsEditor
                 if (Math.Abs(line.Length() - lengthToStart - lengthToEnd) < eps)
                 {
                     lines.Remove(line);
-                    history.AddList(lines);
+                    List<Line> linesToHistory = new List<Line>();
+                    CopyList<Line>.Copy(lines, ref linesToHistory);
+                    history.AddList(linesToHistory); 
                     return true;
                 }
             }
@@ -72,9 +81,12 @@ namespace GraphicsEditor
 
         public void ReDrawAllLines(ref PaintEventArgs e)
         {
-            foreach (var line in lines)
+            if (lines != null)
             {
-                e.Graphics.DrawLine(pen, line.StartPoint, line.EndPoint);
+                foreach (var line in lines)
+                {
+                    e.Graphics.DrawLine(pen, line.StartPoint, line.EndPoint);
+                }
             }
         }
 
