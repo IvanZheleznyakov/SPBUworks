@@ -17,6 +17,7 @@ namespace GraphicsEditor
         private bool isDrawing = false;
         private bool isMoved = false;
         private bool isDeleted = false;
+        private bool isEndCatched = false;
         private float X = 0;
         private float Y = 0;
         private float X1 = 0;
@@ -41,6 +42,31 @@ namespace GraphicsEditor
             {
 
             }
+            else if (isMoved)
+            {
+                float eps = 3F;
+                foreach (var p in twoPoint)
+                {
+                    double length1 = Math.Sqrt(Math.Pow(X - p.X.X, 2) + Math.Pow(Y - p.X.Y, 2));
+                    double length2 = Math.Sqrt(Math.Pow(X - p.Y.X, 2) + Math.Pow(Y - p.Y.Y, 2));
+                    if (length1 < eps)
+                    {
+                        isEndCatched = true;
+                        X = p.Y.X;
+                        Y = p.Y.Y;
+                        twoPoint.Remove(p);
+                        return;
+                    }
+                    else if (length2 < eps)
+                    {
+                        isEndCatched = true;
+                        X = p.X.X;
+                        Y = p.X.Y;
+                        twoPoint.Remove(p);
+                        return;
+                    }
+                }
+            }
         }
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
@@ -54,20 +80,32 @@ namespace GraphicsEditor
                     pictureBox1.Invalidate();
                 }
             }
+            else if (isMoved)
+            {
+                if (isPressed && isEndCatched)
+                {
+                    X1 = e.X;
+                    Y1 = e.Y;
+                    pictureBox1.Invalidate();
+                }
+            }
         }
 
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
-            if (isDrawing)
+            if (isDrawing || (isMoved && isEndCatched))
             {
                 isPressed = false;
-                twoPoint.Add(new TwoPoint(new PointF(X, Y), new PointF(X1, Y1)));
+                isEndCatched = false;
+                PointF newP1 = new PointF(X, Y);
+                PointF newP2 = new PointF(X1, Y1);
+                TwoPoint newLine = new TwoPoint(newP1, newP2);
+                twoPoint.Add(newLine);
             }
             else if (isDeleted)
             {
                 const float eps = 0.25F;
                 isPressed = false;
-                PointF curPoint = new PointF(X, Y);
                 foreach (var p in twoPoint)
                 {
 //                    int m = (p.X.Y - p.Y.Y) * curPoint.X + (p.Y.X - p.X.X) * curPoint.Y + (p.X.X * p.Y.Y - p.Y.X * p.X.Y);
@@ -84,13 +122,17 @@ namespace GraphicsEditor
                     }
                 }
             }
+            else if (isMoved)
+            {
+                isPressed = false;
+            }
         }
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
             Pen pen = new Pen(Color.Black);
 
-            if (isDrawing)
+            if (isDrawing || (isMoved && isEndCatched))
             {
                 e.Graphics.DrawLine(pen, new PointF(X, Y), new PointF(X1, Y1));
             }
