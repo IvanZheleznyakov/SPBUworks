@@ -9,10 +9,10 @@ namespace GraphicsEditor
 {
     public class TwoPoint
     {
-        public Point X { get; private set; }
-        public Point Y { get; private set; }
+        public PointF X { get; private set; }
+        public PointF Y { get; private set; }
 
-        public TwoPoint(Point x, Point y)
+        public TwoPoint(PointF x, PointF y)
         {
             X = x;
             Y = y;

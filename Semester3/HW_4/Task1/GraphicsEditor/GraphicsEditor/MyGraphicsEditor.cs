@@ -17,10 +17,10 @@ namespace GraphicsEditor
         private bool isDrawing = false;
         private bool isMoved = false;
         private bool isDeleted = false;
-        private int X = 0;
-        private int Y = 0;
-        private int X1 = 0;
-        private int Y1 = 0;
+        private float X = 0;
+        private float Y = 0;
+        private float X1 = 0;
+        private float Y1 = 0;
 
         public MyGraphicsEditor()
         {
@@ -61,15 +61,22 @@ namespace GraphicsEditor
             if (isDrawing)
             {
                 isPressed = false;
-                twoPoint.Add(new TwoPoint(new Point(X, Y), new Point(X1, Y1)));
+                twoPoint.Add(new TwoPoint(new PointF(X, Y), new PointF(X1, Y1)));
             }
             else if (isDeleted)
             {
+                const float eps = 0.25F;
                 isPressed = false;
-                Point curPoint = new Point(e.X, e.Y);
+                PointF curPoint = new PointF(X, Y);
                 foreach (var p in twoPoint)
                 {
-                    if (curPoint == p.X || curPoint == p.Y)
+//                    int m = (p.X.Y - p.Y.Y) * curPoint.X + (p.Y.X - p.X.X) * curPoint.Y + (p.X.X * p.Y.Y - p.Y.X * p.X.Y);
+//                    if (m == 0 && curPoint.X >= Math.Min(p.X.X, p.Y.X) && curPoint.X <= Math.Max(p.X.X, p.Y.X))
+//                    if (Math.Abs(((Y - p.X.Y) / (p.Y.Y - p.X.Y)) - ((X - p.X.X) / (p.Y.X - p.X.X))) < eps)
+                    double length1 = Math.Sqrt(Math.Pow(p.X.X - p.Y.X, 2) + Math.Pow(p.X.Y - p.Y.Y, 2));
+                    double length2 = Math.Sqrt(Math.Pow(p.X.X - X, 2) + Math.Pow(p.X.Y - Y, 2));
+                    double length3 = Math.Sqrt(Math.Pow(p.Y.X - X, 2) + Math.Pow(p.Y.Y - Y, 2));
+                    if (Math.Abs(length1 - length2 - length3) < eps)
                     {
                         twoPoint.Remove(p);
                         pictureBox1.Invalidate();
@@ -85,7 +92,7 @@ namespace GraphicsEditor
 
             if (isDrawing)
             {
-                e.Graphics.DrawLine(pen, new Point(X, Y), new Point(X1, Y1));
+                e.Graphics.DrawLine(pen, new PointF(X, Y), new PointF(X1, Y1));
             }
 
             foreach (var p in twoPoint)
