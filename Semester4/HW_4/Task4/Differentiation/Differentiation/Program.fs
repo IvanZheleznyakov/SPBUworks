@@ -51,6 +51,6 @@ let rec simplification (expression: Expression) =
 let test = Sum(Diff(Mult(Const 8, Var 'x'), Mult(Const 3, Var 'x')), Div(Var 'x', Var 'x'));
 //(8x - 3x) + (x / 1)
 let difTest = differentiation test;
-let simpTest = simplification difTest;
+let simpTest = difTest |> simplification |> simplification  |> simplification 
 
 printfn "%A" simpTest;
